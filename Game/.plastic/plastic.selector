@@ -1,0 +1,4 @@
+repository "Game@Choude_studios@cloud"
+  path "/"
+    smartbranch "/main" 
+     

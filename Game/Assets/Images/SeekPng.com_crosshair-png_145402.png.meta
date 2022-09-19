@@ -1,0 +1,1566 @@
+fileFormatVersion: 2
+guid: b58f426026410984b85bc6def998413d
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 2
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 376
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f366f019a042074a9c8f55d16dd7aee
+      internalID: -409982952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_1
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 376
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45fbf47eb86defa4888c39abe98ec53d
+      internalID: -1312538863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_2
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 466
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a4ec43592fe3a94cb6a86ff78a80ae0
+      internalID: -1615584730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_3
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 470
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 116030d3a4c8c80499ffe202adedc45d
+      internalID: 1712991056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_4
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 473
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ea3322fa79664b4287f221494154d9a
+      internalID: 758569008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_5
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 454
+        width: 7
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e7528ed7688e0c4fb5520efd1f8568b
+      internalID: 1563682382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_6
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 473
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fc9457e475a78e4cb9e23c5a56aa6a7
+      internalID: -819635076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_7
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 470
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1682c189c3f76bf4c8d54818056cf139
+      internalID: -543055091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_8
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 466
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f06386a8bb011e94583dd0e31b45e080
+      internalID: -1601994168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_9
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 461
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 102e1f8e1797fa64bbc42a7685af3064
+      internalID: 812863187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_10
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 455
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ebbce0ac21b86345b1d48c4a3fa54d6
+      internalID: -706215006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_11
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 461
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5ec9314d1e69a14f85ec9bb2bc57c07
+      internalID: -1213375134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_12
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 455
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3bd674e155b8e4409998324449d138f
+      internalID: -736859311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_13
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 449
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6211c731b0d66e14796faa20ad824b08
+      internalID: -2073032220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_14
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 448
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbb04fa6cc4ccce4599bb859aabad700
+      internalID: 568355323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_15
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 437
+        width: 48
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6694a5fb30019344a8bf9c8c1fcacd28
+      internalID: 285277718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_16
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 434
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2833b6f2f6921aa4aa5e44cce531464a
+      internalID: -1705587391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_17
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 436
+        width: 48
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e58c34f0f518b84db157e5e5752a8a7
+      internalID: -759403574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_18
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 423
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f59980c551ebbc14a9d9030a32fadd3d
+      internalID: 2102613287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_19
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 414
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebe8ba22eee3ba944885537e977b86a8
+      internalID: -623708603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_20
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 376
+        width: 7
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 001a75f92390bb443ac91afec61ee00c
+      internalID: -444581383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_21
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 414
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 027388f6fd72f544ab92ed995f0e0a8b
+      internalID: -1298246720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_22
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 423
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e24b71044f962c49a5e908fa5a8781f
+      internalID: 128330034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_23
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 406
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64fd2ef657264ed43922604f0254a2c3
+      internalID: 1105703836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_24
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 400
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab7eadb20260b6842bbe0f59fe8ebff8
+      internalID: -1434957225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_25
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 394
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4e8893805dab9e4682241c3fb45a0e1
+      internalID: 236334659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_26
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 394
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57a490c009df15f41a57e2be4c871163
+      internalID: -818127848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_27
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 400
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77c48188c7d75524a84f40e0348a5539
+      internalID: 1949220942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_28
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 407
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3c4eada240a64144bfa0eb0269ae01d
+      internalID: -1748129470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_29
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 391
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ba8b49955c4e18458fdcb87b8e82ebe
+      internalID: 825041186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_30
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 391
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 647f6e949b050354ab5cf3f46e4c1793
+      internalID: 584434267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_31
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 263
+        width: 12
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f3b1515d7af1e34387aa36c0468219c
+      internalID: -214968684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_32
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 287
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b65925ca17edc46b748dbdd696e34c
+      internalID: 1102785544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_33
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 287
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efb6dd440b7494645affb14dd881115f
+      internalID: -1910294350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_34
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 241
+        width: 43
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5702bc5a096c1324e9a4981498c61355
+      internalID: 811736030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_35
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 241
+        width: 43
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f733b16b857e4a0438b7f49c373e9deb
+      internalID: 1247232975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_36
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 246
+        width: 53
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6dae23a3576cc64a9e594673e56e55b
+      internalID: 453246268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_37
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 246
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d08b5b21bc18ba647b99958afee760d1
+      internalID: -1502946042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_38
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 246
+        width: 53
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 402f98dcfd4b85343a46771e19900e21
+      internalID: -701736499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_39
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 246
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54a8558cb4e7a8a4db3963d53455e6f5
+      internalID: 1176740784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_40
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 249
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b62398bf9b0c87448912a781bd49473e
+      internalID: -922501931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_41
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 188
+        width: 12
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4721b9be3621d7408ae632b72d08331
+      internalID: -1474079170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_42
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 188
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a556293e78f38754d991f3022d015b1c
+      internalID: 1879726158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_43
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 188
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9626c87da28d0e545aaadd3000f511ae
+      internalID: -1530051618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_44
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 189
+        width: 82
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7adb2d35321969246a3486e61f03d133
+      internalID: -1185269705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 73
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfc6617d19bef154c82fd604b2204000
+      internalID: -356204134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_46
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 73
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da9a81dadb1104e46b883f7574196ccf
+      internalID: -482038035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_47
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 73
+        width: 16
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 983b36b3cedd1fa419f0a25b1b2758d0
+      internalID: 181890677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_48
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 98
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08ae29d38630613458ba3838dadbad1f
+      internalID: 359902660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_49
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 98
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1deb9c96d8ed667479d04194f4916686
+      internalID: 355365844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_50
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 71
+        width: 30
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cb8f44ae05c9384c9c38e334c8fb0a4
+      internalID: 1641428375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_51
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 71
+        width: 31
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c325ea30317f5245bb700c1e82dd117
+      internalID: -189293017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_52
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 55
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99f9b680a37e53446bf904df7b7858bf
+      internalID: -1274852170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_53
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 58
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c79b97f35333ca4382f885d321ef3f8
+      internalID: -1927360825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_54
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 58
+        width: 55
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c89c21903a4a07b47b127471e46a6447
+      internalID: 1309875706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_55
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 62
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 239ce34f809b5c345b0d63c8ea187324
+      internalID: 1892090189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_56
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 58
+        width: 55
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa57b5b5660c0cf41a027fc06a772950
+      internalID: 1491667319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_57
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 56
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3362e1980ff971949aa2095f90937e19
+      internalID: -2088772253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_58
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 0
+        width: 56
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bf32dda867aac840aa339669fd3d006
+      internalID: -595034337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_59
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 47
+        width: 30
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21b1b5b9bc802de439c989fb3159b87a
+      internalID: -235895115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_60
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 0
+        width: 16
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d28c9bb5b5cc444e8f1da50bbf1086f
+      internalID: 1162821656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_61
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 47
+        width: 31
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc800a03769f00049bdf5746c92183c8
+      internalID: -523339563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_62
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c09276562378954468a534b50ea0ac77
+      internalID: 1731956208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_crosshair-png_145402_63
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 0
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00ed76ed9cdebb641bdcccfe4de29605
+      internalID: -1683612704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 2bfe14983f3561845accc63b532c3a23
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SeekPng.com_crosshair-png_145402_58: -595034337
+      SeekPng.com_crosshair-png_145402_36: 453246268
+      SeekPng.com_crosshair-png_145402_28: -1748129470
+      SeekPng.com_crosshair-png_145402_4: 758569008
+      SeekPng.com_crosshair-png_145402_21: -1298246720
+      SeekPng.com_crosshair-png_145402_52: -1274852170
+      SeekPng.com_crosshair-png_145402_54: 1309875706
+      SeekPng.com_crosshair-png_145402_25: 236334659
+      SeekPng.com_crosshair-png_145402_30: 584434267
+      SeekPng.com_crosshair-png_145402_20: -444581383
+      SeekPng.com_crosshair-png_145402_56: 1491667319
+      SeekPng.com_crosshair-png_145402_26: -818127848
+      SeekPng.com_crosshair-png_145402_16: -1705587391
+      SeekPng.com_crosshair-png_145402_35: 1247232975
+      SeekPng.com_crosshair-png_145402_29: 825041186
+      SeekPng.com_crosshair-png_145402_60: 1162821656
+      SeekPng.com_crosshair-png_145402_19: -623708603
+      SeekPng.com_crosshair-png_145402_63: -1683612704
+      SeekPng.com_crosshair-png_145402_39: 1176740784
+      SeekPng.com_crosshair-png_145402_57: -2088772253
+      SeekPng.com_crosshair-png_145402_37: -1502946042
+      SeekPng.com_crosshair-png_145402_38: -701736499
+      SeekPng.com_crosshair-png_145402_12: -736859311
+      SeekPng.com_crosshair-png_145402_13: -2073032220
+      SeekPng.com_crosshair-png_145402_14: 568355323
+      SeekPng.com_crosshair-png_145402_51: -189293017
+      SeekPng.com_crosshair-png_145402_50: 1641428375
+      SeekPng.com_crosshair-png_145402_8: -1601994168
+      SeekPng.com_crosshair-png_145402_17: -759403574
+      SeekPng.com_crosshair-png_145402_23: 1105703836
+      SeekPng.com_crosshair-png_145402_33: -1910294350
+      SeekPng.com_crosshair-png_145402_40: -922501931
+      SeekPng.com_crosshair-png_145402_11: -1213375134
+      SeekPng.com_crosshair-png_145402_6: -819635076
+      SeekPng.com_crosshair-png_145402_46: -482038035
+      SeekPng.com_crosshair-png_145402_49: 355365844
+      SeekPng.com_crosshair-png_145402_43: -1530051618
+      SeekPng.com_crosshair-png_145402_27: 1949220942
+      SeekPng.com_crosshair-png_145402_47: 181890677
+      SeekPng.com_crosshair-png_145402_18: 2102613287
+      SeekPng.com_crosshair-png_145402_2: -1615584730
+      SeekPng.com_crosshair-png_145402_1: -1312538863
+      SeekPng.com_crosshair-png_145402_61: -523339563
+      SeekPng.com_crosshair-png_145402_9: 812863187
+      SeekPng.com_crosshair-png_145402_31: -214968684
+      SeekPng.com_crosshair-png_145402_22: 128330034
+      SeekPng.com_crosshair-png_145402_45: -356204134
+      SeekPng.com_crosshair-png_145402_15: 285277718
+      SeekPng.com_crosshair-png_145402_59: -235895115
+      SeekPng.com_crosshair-png_145402_3: 1712991056
+      SeekPng.com_crosshair-png_145402_53: -1927360825
+      SeekPng.com_crosshair-png_145402_41: -1474079170
+      SeekPng.com_crosshair-png_145402_48: 359902660
+      SeekPng.com_crosshair-png_145402_42: 1879726158
+      SeekPng.com_crosshair-png_145402_7: -543055091
+      SeekPng.com_crosshair-png_145402_32: 1102785544
+      SeekPng.com_crosshair-png_145402_34: 811736030
+      SeekPng.com_crosshair-png_145402_62: 1731956208
+      SeekPng.com_crosshair-png_145402_0: -409982952
+      SeekPng.com_crosshair-png_145402_5: 1563682382
+      SeekPng.com_crosshair-png_145402_55: 1892090189
+      SeekPng.com_crosshair-png_145402_44: -1185269705
+      SeekPng.com_crosshair-png_145402_10: -706215006
+      SeekPng.com_crosshair-png_145402_24: -1434957225
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
