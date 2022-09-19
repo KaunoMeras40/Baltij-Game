@@ -4221,7 +4221,7 @@ GameObject:
   - component: {fileID: 2408543098505540387}
   - component: {fileID: 8991191842832364513}
   - component: {fileID: 8991191842832364514}
-  - component: {fileID: 8991191842832364517}
+  - component: {fileID: 7430755221922227305}
   - component: {fileID: 8991191842832364519}
   - component: {fileID: 8991191842832364512}
   - component: {fileID: 8991191842832364518}
@@ -4290,7 +4290,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.31
-  m_Speed: 5
+  m_Speed: 4
   m_Acceleration: 100
   avoidancePriority: 50
   m_AngularSpeed: 180
@@ -4322,14 +4322,14 @@ MonoBehaviour:
     m_Bits: 8
   walkPointRange: 5
   sightRange: 10
-  attackRange: 1.8
+  attackRange: 4
   playerInSightRange: 0
   playerInAttackRange: 0
   attackEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8991191842832364517}
-        m_TargetAssemblyTypeName: EnemyV1_Attack, Assembly-CSharp
+      - m_Target: {fileID: 7430755221922227305}
+        m_TargetAssemblyTypeName: EnemyV3_Attack, Assembly-CSharp
         m_MethodName: Attack
         m_Mode: 1
         m_Arguments:
@@ -4342,7 +4342,7 @@ MonoBehaviour:
         m_CallState: 2
   attacking: 0
   canPatrol: 0
---- !u!114 &8991191842832364517
+--- !u!114 &7430755221922227305
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4351,11 +4351,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 8991191842832364515}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e30d539353a9abf488063de84822141d, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a01083333ab30e479ede3e483a4fdca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRate: 0.8
-  attackRange: 1.8
+  jumpAttackRange: 4
+  regularAttackRange: 1.8
+  HeightCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5
+      value: 2
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -2
+      outSlope: -2
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  JumpSpeed: 1.3
+  attackRate: 2
+  attackRange: 4
   HitEffect: {fileID: 3644747646193194528, guid: 6c5d2230fecd6794e97c0325ea4e30fe,
     type: 3}
 --- !u!114 &8991191842832364519
@@ -4382,8 +4418,8 @@ MonoBehaviour:
   HitEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8991191842832364517}
-        m_TargetAssemblyTypeName: EnemyV1_Attack, Assembly-CSharp
+      - m_Target: {fileID: 7430755221922227305}
+        m_TargetAssemblyTypeName: EnemyV3_Attack, Assembly-CSharp
         m_MethodName: AttackEndDebug
         m_Mode: 1
         m_Arguments:

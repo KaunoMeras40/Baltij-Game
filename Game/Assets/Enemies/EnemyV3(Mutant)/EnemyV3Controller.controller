@@ -36,7 +36,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: 202adf30bea1eff4a916793f8e45dae5,
+    m_Motion: {fileID: -203655887218126122, guid: 3eada9e933e695c4b9b1b63bd56b60b8,
       type: 3}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
@@ -45,7 +45,7 @@ BlendTree:
     m_DirectBlendParameter: Speed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: 9af10d6c67e155d4aac65fddcbaf2f2b,
+    m_Motion: {fileID: -203655887218126122, guid: 634d9992fb1263a49937a6ce7915ad81,
       type: 3}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
@@ -54,11 +54,11 @@ BlendTree:
     m_DirectBlendParameter: Speed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: 213afe10a6570c248bef0f5f29f07e53,
+    m_Motion: {fileID: -203655887218126122, guid: 3be162d85fa19c14084391699c5a40f4,
       type: 3}
     m_Threshold: 2
     m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
+    m_TimeScale: 1.5
     m_CycleOffset: 0
     m_DirectBlendParameter: Speed
     m_Mirror: 0
@@ -102,7 +102,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: EnemyAttackTree
-  m_Speed: 1.7
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -414915327418764112}
@@ -560,7 +560,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.25
   m_TransitionOffset: 0
   m_ExitTime: 0.9324324
-  m_HasExitTime: 0
+  m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1

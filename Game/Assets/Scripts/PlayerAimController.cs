@@ -18,6 +18,8 @@ public class PlayerAimController : MonoBehaviour
     [SerializeField] private GameObject Crosshair;
     [SerializeField] private LayerMask AimColliderMask = new LayerMask();
 
+    public Transform jumpOffset;
+
     public Transform aimPos;
 
     private Vector3 MouseWorldPosition;

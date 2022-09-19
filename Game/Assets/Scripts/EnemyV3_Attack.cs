@@ -104,21 +104,17 @@ public class EnemyV3_Attack : MonoBehaviour
             attacking = false;
             hasAttacked = false;
         }
-    }
-
-    void JumpStart()
-    {
-        StartCoroutine(JumpAttack());
-    }
-    void JumpTotalEnd()
-    {
-        Debug.Log("Tpta;lEnd");
         attackRateTimer = 0f;
         attacking = false;
         hasAttacked = false;
         jumping = false;
         StopCoroutine(JumpAttack());
         agent.isStopped = false;
+    }
+
+    void JumpStart()
+    {
+        StartCoroutine(JumpAttack());
     }
 
     private IEnumerator JumpAttack()
