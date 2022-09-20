@@ -7,6 +7,8 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject EnemyV1Prefab;
     [SerializeField] private GameObject EnemyV2Prefab;
+    [SerializeField] private GameObject EnemyV3Prefab;
+    [SerializeField] private GameObject EnemyV4Prefab;
 
     [SerializeField] private string[] weapons;
 
@@ -73,7 +75,7 @@ public class EnemySpawner : MonoBehaviour
     private void Update()
     {
         GameObject[] alive = GameObject.FindGameObjectsWithTag("Enemy");
-       // Debug.Log(alive.Length);
+
         if (alive.Length == 0 && spawnedEnemies == NumberOfEnemiesToSpawn)
         {
             StartCoroutine(SpawnEnemies());
@@ -130,6 +132,44 @@ public class EnemySpawner : MonoBehaviour
         enemy.GetComponent<Appearance>().EquipWeapon(weapon);
     }
 
+    void CreateEnemyV3(Vector3 pos)
+    {
+        GameObject enemy = Instantiate(EnemyV3Prefab, pos, Quaternion.identity);
+        ScaleEnemy(currentWave);
+        int health = Random.Range(0, healthrange);
+        int armor = Random.Range(0, armorrange);
+        int damage = Random.Range(5, damagerange);
+
+        float attackRange = 1.2f;
+
+        CharacterStats enemyStats = enemy.GetComponent<CharacterStats>();
+        enemyStats.NPCHealthModifier(health);
+        enemyStats.AddArmor(armor);
+        enemyStats.AddDamage(damage);
+
+        enemy.GetComponent<EnemyV1_Attack>().attackRange = attackRange;
+        enemy.GetComponent<EnemyMovement>().attackRange = attackRange;
+        enemy.GetComponent<Appearance>().RandomAppearance();
+        //enemy.GetComponent<Appearance>().EquipWeapon(weapon);
+    }
+
+    void CreateEnemyV4(Vector3 pos)
+    {
+        GameObject enemy = Instantiate(EnemyV4Prefab, pos, Quaternion.identity);
+        ScaleEnemy(currentWave);
+        int health = Random.Range(0, healthrange);
+        int armor = Random.Range(0, armorrange);
+        int damage = Random.Range(5, damagerange);
+
+        CharacterStats enemyStats = enemy.GetComponent<CharacterStats>();
+        enemyStats.NPCHealthModifier(health);
+        enemyStats.AddArmor(armor);
+        enemyStats.AddDamage(damage);
+
+        enemy.GetComponent<Appearance>().RandomAppearance();
+        //enemy.GetComponent<Appearance>().EquipWeapon(weapon);
+    }
+
     void CreateEnemyV2(Vector3 pos)
     {
         GameObject enemy = Instantiate(EnemyV2Prefab, pos, Quaternion.identity);
@@ -150,22 +190,33 @@ public class EnemySpawner : MonoBehaviour
     {
         int enemyindex = Random.Range(0, enemies.Length);
         Vector3 pos = ChooseRandomPositionOnNavMesh();
+        enemiesAlive++;
         if (enemies[enemyindex] == "V1")
         {
             CreateEnemyV1(pos);
-            enemiesAlive++;
         }
         else if (enemies[enemyindex] == "V2")
         {
             CreateEnemyV2(pos);
-            enemiesAlive++;
+        }
+        else if (enemies[enemyindex] == "V3")
+        {
+            CreateEnemyV3(pos);
+        }
+        else if (enemies[enemyindex] == "V4")
+        {
+            CreateEnemyV4(pos);
         }
     }
 
     private Vector3 ChooseRandomPositionOnNavMesh()
     {
-        int VertexIndex = Random.Range(0, Triangulation.vertices.Length);
-        return Triangulation.vertices[VertexIndex];
+        GameObject[] spawns = GameObject.FindGameObjectsWithTag("EnemySpawn");
+        int index = Random.Range(0, spawns.Length);
+        return spawns[index].transform.position;
+
+        //int VertexIndex = Random.Range(0, Triangulation.vertices.Length);
+       // return Triangulation.vertices[VertexIndex];
     }
 
     private void ScaleUpSpawns()

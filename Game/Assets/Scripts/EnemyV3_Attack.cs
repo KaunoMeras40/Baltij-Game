@@ -40,6 +40,7 @@ public class EnemyV3_Attack : MonoBehaviour
         attackRateTimer += Time.deltaTime;
         if (attacking && !hasAttacked)
         {
+            agent.SetDestination(transform.position);
             if (Vector3.Distance(transform.position, player.position) < attackRange)
             {
                 int damage = GetComponent<CharacterStats>().damage.GetValue();
@@ -49,7 +50,7 @@ public class EnemyV3_Attack : MonoBehaviour
                 hasAttacked = true;
             }
         }
-        if (Vector3.Distance(transform.position, player.position) < 3f)
+        if (Vector3.Distance(transform.position, player.position) < 2.8f)
         {
             attackRange = regularAttackRange;
             movement.attackRange = regularAttackRange;
@@ -70,10 +71,10 @@ public class EnemyV3_Attack : MonoBehaviour
             animator.SetBool("Running", false);
             animator.SetBool("Walking", false);
             animator.SetTrigger("Attack");
-            if (Vector3.Distance(transform.position, player.position) > 3f)
+            if (Vector3.Distance(transform.position, player.position) > 2.8f)
             {
-               agent.isStopped = true;
-               animator.SetFloat("AttackType", 2f);
+                agent.isStopped = true;
+                animator.SetFloat("AttackType", 2f);
             }
             else
             {
@@ -88,11 +89,13 @@ public class EnemyV3_Attack : MonoBehaviour
     {
         attacking = false;
         hasAttacked = false;
-        GetComponent<EnemyMovement>().attacking = false;
+        movement.attacking = false;
+
     }
 
     void AttackStart()
     {
+        movement.attacking = true;
         attacking = true;
     }
 
@@ -104,6 +107,7 @@ public class EnemyV3_Attack : MonoBehaviour
             attacking = false;
             hasAttacked = false;
         }
+        movement.attacking = false;
         attackRateTimer = 0f;
         attacking = false;
         hasAttacked = false;

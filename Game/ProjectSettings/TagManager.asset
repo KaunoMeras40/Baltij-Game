@@ -8,6 +8,7 @@ TagManager:
   - Shake
   - PlayerWeapon
   - Enemy
+  - EnemySpawn
   layers:
   - Default
   - TransparentFX

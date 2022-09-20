@@ -4355,7 +4355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpAttackRange: 4
-  regularAttackRange: 1.8
+  regularAttackRange: 1.2
   HeightCurve:
     serializedVersion: 2
     m_Curve:
@@ -4390,7 +4390,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   JumpSpeed: 1.3
-  attackRate: 2
+  attackRate: 0.8
   attackRange: 4
   HitEffect: {fileID: 3644747646193194528, guid: 6c5d2230fecd6794e97c0325ea4e30fe,
     type: 3}
@@ -4407,9 +4407,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth:
-    BaseValue: 40
+    BaseValue: 60
   damage:
-    BaseValue: 0
+    BaseValue: 5
   armor:
     BaseValue: 0
   DeathEvent:
@@ -4469,7 +4469,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8991191842832364515}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d54eefccac523b4daad707129690745, type: 3}
   m_Name: 

@@ -38,7 +38,7 @@ public class EnemyMovement : MonoBehaviour
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
         if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (Vector3.Distance(transform.position, player.position) < agent.stoppingDistance)
+        if (Vector3.Distance(transform.position, player.position) < agent.stoppingDistance || attacking == true)
         {
             agent.SetDestination(transform.position);
         }

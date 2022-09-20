@@ -119,6 +119,7 @@ public class CharacterStats : MonoBehaviour
         }
         else
         {
+            gameObject.tag = "Untagged";
             agent.enabled = false;
             animator.enabled = false;
             GetComponent<EnemyMovement>().enabled = false;
