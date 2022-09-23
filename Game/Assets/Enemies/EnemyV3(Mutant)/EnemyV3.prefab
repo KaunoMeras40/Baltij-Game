@@ -4342,6 +4342,7 @@ MonoBehaviour:
         m_CallState: 2
   attacking: 0
   canPatrol: 0
+  ammoBox: {fileID: 813184589052612732, guid: 8253506135bcd264bb5a5bf8d2bdb20d, type: 3}
 --- !u!114 &7430755221922227305
 MonoBehaviour:
   m_ObjectHideFlags: 0

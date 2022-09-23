@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private GameObject EnemyV2Prefab;
     [SerializeField] private GameObject EnemyV3Prefab;
     [SerializeField] private GameObject EnemyV4Prefab;
+
+    [SerializeField] TextMeshProUGUI waveNumber;
+    [SerializeField] TextMeshProUGUI enemyAmount;
 
     [SerializeField] private string[] weapons;
 
@@ -30,7 +34,6 @@ public class EnemySpawner : MonoBehaviour
 
     private NavMeshTriangulation Triangulation;
 
-    public bool ContinuousSpawning;
     public int NumberOfEnemiesToSpawn = 5;
     public float SpawnDelay = 1f;
 
@@ -49,27 +52,20 @@ public class EnemySpawner : MonoBehaviour
     }
     private IEnumerator SpawnEnemies()
     {
-        Debug.Log("Spawn function");
-        ScaleUpSpawns();
         currentWave++;
         spawnedEnemies = 0;
         enemiesAlive = 0;
+        ScaleUpSpawns();
+        yield return new WaitForSeconds(5f);
 
         WaitForSeconds Wait = new WaitForSeconds(SpawnDelay);
 
         while (spawnedEnemies < NumberOfEnemiesToSpawn)
         {
             SpawnEnemy();
-            Debug.Log(currentWave);
             spawnedEnemies++;
 
             yield return Wait;
-        }
-
-        if (ContinuousSpawning)
-        {
-            ScaleUpSpawns();
-            StartCoroutine(SpawnEnemies());
         }
     }
     private void Update()
@@ -80,6 +76,8 @@ public class EnemySpawner : MonoBehaviour
         {
             StartCoroutine(SpawnEnemies());
         }
+        waveNumber.text = "Wave " + currentWave.ToString();
+        enemyAmount.text = "Enemies Left: " + alive.Length;
     }
     void ScaleEnemy(int wave)
     {
@@ -99,9 +97,6 @@ public class EnemySpawner : MonoBehaviour
         int health = Random.Range(0, healthrange);
         int armor = Random.Range(0, armorrange);
         int damage = Random.Range(5, damagerange);
-
-        Debug.Log(healthrange);
-        Debug.Log(damagerange);
 
         float attackRange = 1f;
 
@@ -147,7 +142,7 @@ public class EnemySpawner : MonoBehaviour
         enemyStats.AddArmor(armor);
         enemyStats.AddDamage(damage);
 
-        enemy.GetComponent<EnemyV1_Attack>().attackRange = attackRange;
+        enemy.GetComponent<EnemyV3_Attack>().attackRange = attackRange;
         enemy.GetComponent<EnemyMovement>().attackRange = attackRange;
         enemy.GetComponent<Appearance>().RandomAppearance();
         //enemy.GetComponent<Appearance>().EquipWeapon(weapon);
@@ -224,6 +219,7 @@ public class EnemySpawner : MonoBehaviour
         NumberOfEnemiesToSpawn = InitialEnemiesToSpawn;
         SpawnDelay = InitialSpawnDelay;
         NumberOfEnemiesToSpawn = Mathf.FloorToInt(InitialEnemiesToSpawn + SpawnCountCurve.Evaluate(currentWave + 1));
+        Debug.Log(NumberOfEnemiesToSpawn);
         SpawnDelay = InitialSpawnDelay * SpawnRateCurve.Evaluate(currentWave + 1);
     }
 

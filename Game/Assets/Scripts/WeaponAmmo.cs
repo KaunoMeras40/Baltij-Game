@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using StarterAssets;
+using TMPro;
 public class WeaponAmmo : MonoBehaviour
 {
     public int clipSize;
     public int extraAmmo;
+
+    [SerializeField] TextMeshProUGUI ammoText;
 
     [HideInInspector] public int currentAmmo;
 
@@ -31,6 +34,7 @@ public class WeaponAmmo : MonoBehaviour
             }
             Inputs.reload = false;
         }
+        ammoText.text = "Ammo: " + currentAmmo + "/" + extraAmmo;
     }
 
     void reloadingOff()

@@ -7,6 +7,11 @@ public class AmmoBox : MonoBehaviour
 
     [SerializeField] private int amountToRefill;
 
+    public void setAmount(int amount)
+    {
+        amountToRefill = amount;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))

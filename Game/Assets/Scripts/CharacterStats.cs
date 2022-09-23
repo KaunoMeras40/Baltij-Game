@@ -109,9 +109,7 @@ public class CharacterStats : MonoBehaviour
 
     public virtual void Die()
     {
-        Debug.Log(transform.name + " died.");
         dead = true;
-        animator.SetTrigger("Dead");
         DeathEvent.Invoke();
         if (IsPlayer)
         {
@@ -119,10 +117,11 @@ public class CharacterStats : MonoBehaviour
         }
         else
         {
+            PlayerManager.Instance.AddMoney(Random.Range(1, 3));
             gameObject.tag = "Untagged";
             agent.enabled = false;
             animator.enabled = false;
-            GetComponent<EnemyMovement>().enabled = false;
+            GetComponent<EnemyMovement>().OnDeath();
             GetComponent<CapsuleCollider>().enabled = false;
             Instantiate(DeathEffect, transform.position, Quaternion.identity, transform);
             Destroy(gameObject, 10f);

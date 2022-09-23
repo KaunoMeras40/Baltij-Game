@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -21,6 +22,16 @@ public class PlayerManager : MonoBehaviour
 
     public new List<GameObject> weaponList;
 
+    [SerializeField] TextMeshProUGUI weaponName;
+    [SerializeField] TextMeshProUGUI moneyAmount;
+
+    public int playerMoney;
+
+    private void Start()
+    {
+        playerMoney = 20;
+    }
+
     public void switchWeapon(Item weapon)
     {
         currentWeapon = weapon;
@@ -40,6 +51,21 @@ public class PlayerManager : MonoBehaviour
             }
         }
     }
+
+    public void AddMoney(int amount)
+    {
+        playerMoney += amount;
+    }
+
+    private void Update()
+    {
+        if (currentWeapon != null)
+        {
+            weaponName.text = currentWeapon.itemName;
+        }
+        moneyAmount.text = "Money: " + playerMoney + "€";
+    }
+
 
 
 }

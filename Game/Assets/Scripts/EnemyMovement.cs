@@ -25,6 +25,8 @@ public class EnemyMovement : MonoBehaviour
     public bool attacking;
 
     [SerializeField] private bool canPatrol;
+
+    [SerializeField] GameObject ammoBox;
     private void Start()
     {
         player = PlayerManager.Instance.player.transform;
@@ -78,6 +80,17 @@ public class EnemyMovement : MonoBehaviour
             if (distanceToWalkPoint.magnitude < 1f)
                 walkPointSet = false;
         } 
+    }
+
+    public void OnDeath()
+    {
+        int chance = Random.Range(1, 7);
+        if (chance == 1)
+        {
+            Transform ammo = Instantiate(ammoBox, transform.position, Quaternion.identity).transform;
+            ammo.GetComponent<AmmoBox>().setAmount(Random.Range(10, 30));
+        }
+        this.enabled = false;
     }
 
     void AttackEnd()
