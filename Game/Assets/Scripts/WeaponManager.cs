@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using StarterAssets;
+using UnityEngine.Animations.Rigging;
 
 public class WeaponManager : MonoBehaviour
 {
@@ -23,6 +24,9 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] AudioClip MagazineOutClip;
     [SerializeField] AudioClip LoadClip;
     [SerializeField] AudioClip LoadEndClip;
+    [SerializeField] AudioClip PumpAfterShot;
+
+    [SerializeField] bool shotgun;
 
     AudioSource audioSource;
 
@@ -31,6 +35,9 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] private ParticleSystem ShootingEffect;
 
     [SerializeField] public itemTypeSlot item;
+
+    public TwoBoneIKConstraint LHandIK;
+    public TwoBoneIKConstraint LHandIKAimed;
 
     private CharacterStats charStats;
     void Start()
@@ -75,6 +82,7 @@ public class WeaponManager : MonoBehaviour
             {
                 aimController.AimToTarget();
             }
+            aimController.choking = false;
             hasShot = true;
             fireRateTimer = 0f;
             shootingPoint.LookAt(aimController.hitPos);
@@ -85,7 +93,26 @@ public class WeaponManager : MonoBehaviour
             ParticleSystem.MainModule main = ShootingEffect.main;
             main.simulationSpeed = 2;
             ShootingEffect.Play();
-            for (int i = 0; i < bulletsPerShot; i++)
+            if (shotgun)
+            {
+                audioSource.PlayOneShot(PumpAfterShot);
+                aimController.choking = true;
+                for (int i = 0; i < bulletsPerShot; i++)
+                {
+                    float spreadFactor = 0.05f;
+                    Vector3 newPoint = shootingPoint.forward;
+                    newPoint.x += Random.Range(-spreadFactor, spreadFactor);
+                    newPoint.y += Random.Range(-spreadFactor, spreadFactor);
+                    newPoint.z += Random.Range(-spreadFactor, spreadFactor);
+
+                    GameObject currentBullet = Instantiate(BulletPrefab, shootingPoint.position, Quaternion.identity);
+                    int damage = charStats.damage.GetValue();
+                    currentBullet.GetComponent<Bullet>().damage = Mathf.RoundToInt(damage);
+                    Rigidbody rb = currentBullet.GetComponent<Rigidbody>();
+                    rb.AddForce(newPoint * 300f, ForceMode.Impulse);
+                }
+            }
+            else
             {
                 GameObject currentBullet = Instantiate(BulletPrefab, shootingPoint.position, Quaternion.identity);
                 currentBullet.GetComponent<Bullet>().damage = charStats.damage.GetValue();
@@ -99,6 +126,7 @@ public class WeaponManager : MonoBehaviour
             audioSource.PlayOneShot(gunShotBlank);
         }
     }
+
     public void MagazineOut()
     {
        audioSource.PlayOneShot(MagazineOutClip);

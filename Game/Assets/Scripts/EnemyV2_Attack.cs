@@ -15,14 +15,17 @@ public class EnemyV2_Attack : MonoBehaviour
 
     bool soundplayed = false;
 
+    CharacterStats charStats;
+
     void Start()
     {
         player = PlayerManager.Instance.player.transform;
+        charStats = GetComponent<CharacterStats>();
     }
 
     private void Update()
     {
-        if (Vector3.Distance(player.position, transform.position) < soundRange && !hasExploded && !soundplayed)
+        if (Vector3.Distance(player.position, transform.position) < soundRange && !hasExploded && !soundplayed && charStats.dead == false)
         {
             GetComponent<AudioSource>().Play();
             soundplayed = true;

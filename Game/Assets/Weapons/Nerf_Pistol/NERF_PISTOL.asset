@@ -15,5 +15,7 @@ MonoBehaviour:
   itemName: Nerf
   damageModifier: 0
   item: 1
-  itemPrefab: {fileID: 0}
+  type: 1
+  itemPrefab: {fileID: 3449581146626156773, guid: 6e545963655254b4dbccab8e4ea059ec,
+    type: 3}
   pistol: 1

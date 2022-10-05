@@ -10,6 +10,8 @@ public class Item : ScriptableObject
 
     public itemTypeSlot item;
 
+    public weaponType type;
+
     public GameObject itemPrefab;
 
     public bool pistol;
@@ -25,4 +27,6 @@ public class Item : ScriptableObject
     }
 }
 
-public enum itemTypeSlot { M4A1, NERF_PISTOL }
+public enum itemTypeSlot { M4A1, NERF_PISTOL, MOSSBERG }
+
+public enum weaponType { Rifle, Pistol, Shotgun }

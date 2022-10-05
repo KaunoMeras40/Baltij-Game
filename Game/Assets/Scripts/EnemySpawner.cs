@@ -39,6 +39,8 @@ public class EnemySpawner : MonoBehaviour
 
     public string[] enemies;
 
+    int shootingEnemiesAmount = 0;
+
     private void Awake()
     {
         InitialEnemiesToSpawn = NumberOfEnemiesToSpawn;
@@ -63,8 +65,6 @@ public class EnemySpawner : MonoBehaviour
         while (spawnedEnemies < NumberOfEnemiesToSpawn)
         {
             SpawnEnemy();
-            spawnedEnemies++;
-
             yield return Wait;
         }
     }
@@ -163,6 +163,8 @@ public class EnemySpawner : MonoBehaviour
 
         enemy.GetComponent<Appearance>().RandomAppearance();
         //enemy.GetComponent<Appearance>().EquipWeapon(weapon);
+
+        shootingEnemiesAmount++;
     }
 
     void CreateEnemyV2(Vector3 pos)
@@ -185,7 +187,6 @@ public class EnemySpawner : MonoBehaviour
     {
         int enemyindex = Random.Range(0, enemies.Length);
         Vector3 pos = ChooseRandomPositionOnNavMesh();
-        enemiesAlive++;
         if (enemies[enemyindex] == "V1")
         {
             CreateEnemyV1(pos);
@@ -200,8 +201,17 @@ public class EnemySpawner : MonoBehaviour
         }
         else if (enemies[enemyindex] == "V4")
         {
-            CreateEnemyV4(pos);
+            if (shootingEnemiesAmount >= 2)
+            {
+                return;
+            }
+            else
+            {
+                CreateEnemyV4(pos);
+            }
         }
+        spawnedEnemies++;
+        enemiesAlive++;
     }
 
     private Vector3 ChooseRandomPositionOnNavMesh()

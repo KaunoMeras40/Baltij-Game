@@ -24,17 +24,18 @@ public class PlayerManager : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI weaponName;
     [SerializeField] TextMeshProUGUI moneyAmount;
+    PlayerAimController aimController;
 
     public int playerMoney;
 
     private void Start()
     {
         playerMoney = 20;
+        aimController = PlayerAimController.instance;
     }
 
     public void switchWeapon(Item weapon)
     {
-        currentWeapon = weapon;
         foreach (GameObject item in weaponList)
         {
             item.SetActive(true);
@@ -42,8 +43,15 @@ public class PlayerManager : MonoBehaviour
 
             if (manager.item == weapon.item)
             {
+                if (currentWeapon != null)
+                {
+                    aimController.LHandIK.weight = 0f;
+                    aimController.LHandIKAimed.weight = 0f;
+                    Instantiate(currentWeapon.itemPrefab, player.transform.position, Quaternion.identity);
+                }
+                currentWeapon = weapon;
                 item.SetActive(true);
-                player.GetComponent<PlayerAimController>().SwitchWeapon(weapon.pistol);
+                player.GetComponent<PlayerAimController>().SwitchWeapon(weapon);
             }
             else
             {

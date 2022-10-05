@@ -33,6 +33,8 @@ public class EnemyV4_Shoot : MonoBehaviour
     public Transform aimPosition;
     [SerializeField] private LayerMask colliderMask;
 
+    bool canSeePlayer;
+
 
     private void Start()
     {
@@ -49,11 +51,20 @@ public class EnemyV4_Shoot : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit raycasthit, 999f, colliderMask))
         {
             aimPosition.position = raycasthit.point;
+            if (raycasthit.transform.GetComponent<PlayerAimController>())
+            {
+                canSeePlayer = true;
+            }
+            else
+            {
+                canSeePlayer = false;
+            }
         }
     }
 
     public void Shoot()
     {
+        if (canSeePlayer == false) return;
         animator.SetBool("Running", false);
         animator.SetBool("Walking", false);
         if (attackRateTimer > attackRate && !attacking)
@@ -71,12 +82,10 @@ public class EnemyV4_Shoot : MonoBehaviour
             animator.SetLayerWeight(1, 1f);
             if (isHit)
             {
-                Debug.Log("Hit");
                 rb.AddForce(shootingPoint.forward * 300f, ForceMode.Impulse);
             }
             else
             {
-                Debug.Log("No Hit");
                 Vector3 newPoint = shootingPoint.forward + new Vector3(Random.Range(0f, 0.5f), Random.Range(0f, 0.5f), Random.Range(0f, 0.5f));
                 rb.AddForce(newPoint * 300f, ForceMode.Impulse);
             }

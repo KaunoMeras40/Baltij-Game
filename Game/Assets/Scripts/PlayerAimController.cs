@@ -39,22 +39,22 @@ public class PlayerAimController : MonoBehaviour
     [SerializeField] private MultiAimConstraint HeadAim;
     [SerializeField] private MultiAimConstraint RHandAim;
 
-    [SerializeField] private TwoBoneIKConstraint LHandIK_Rifle;
-    [SerializeField] private TwoBoneIKConstraint LHandIKAimed_Rifle;
-
-    [SerializeField] private TwoBoneIKConstraint LHandIK_Pistol;
-    [SerializeField] private TwoBoneIKConstraint LHandIKAimed_Pistol;
+    public TwoBoneIKConstraint LHandIK;
+    public TwoBoneIKConstraint LHandIKAimed;
 
     [SerializeField] private AudioSource WeaponAudioSource;
     public Vector3 hitPos { private set; get; }
 
     public bool reloading = false;
+    [HideInInspector] public bool choking = false;
     bool hipfire = false;
 
     public GameObject Magazine;
     public GameObject WeaponMagazine;
 
     public bool isPistol;
+    public bool isShotgun;
+    public bool isRifle;
 
     public delegate void OnItemInteract();
     public OnItemInteract onItemInteractCallback;
@@ -65,9 +65,18 @@ public class PlayerAimController : MonoBehaviour
         Inputs = GetComponent<StarterAssetsInputs>();
         animator = GetComponent<Animator>();
     }
-
+    private void Start()
+    {
+        
+    }
     void Update()
     {
+        if (gameObject.GetComponentInChildren<WeaponManager>())
+        {
+            LHandIK = gameObject.GetComponentInChildren<WeaponManager>().LHandIK;
+            LHandIKAimed = gameObject.GetComponentInChildren<WeaponManager>().LHandIKAimed;
+        }
+
         Vector2 ScreenCenter = new Vector2(Screen.width / 2f, Screen.height / 2f);
         MouseWorldPosition = Vector3.zero;
         Ray cameraRay = Camera.main.ScreenPointToRay(ScreenCenter);
@@ -86,14 +95,10 @@ public class PlayerAimController : MonoBehaviour
             RHandAim.weight = Mathf.Lerp(RHandAim.weight, 1f, 10f * Time.deltaTime);
             if(!reloading)
             {
+                LHandIK.weight = Mathf.Lerp(LHandIK.weight, 0f, 10f * Time.deltaTime);
+                LHandIKAimed.weight = Mathf.Lerp(LHandIKAimed.weight, 1f, 10f * Time.deltaTime);
                 if (!isPistol)
                 {
-                    LHandIK_Rifle.weight = Mathf.Lerp(LHandIK_Rifle.weight, 0f, 10f * Time.deltaTime);
-                    LHandIKAimed_Rifle.weight = Mathf.Lerp(LHandIKAimed_Rifle.weight, 1f, 10f * Time.deltaTime);
-
-                    LHandIK_Pistol.weight = Mathf.Lerp(LHandIK_Pistol.weight, 0f, 10f * Time.deltaTime);
-                    LHandIKAimed_Pistol.weight = Mathf.Lerp(LHandIKAimed_Pistol.weight, 0f, 10f * Time.deltaTime);
-
                     animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 0f, Time.deltaTime * 10f));
                     animator.SetLayerWeight(3, Mathf.Lerp(animator.GetLayerWeight(3), 0f, Time.deltaTime * 10f));
 
@@ -102,11 +107,6 @@ public class PlayerAimController : MonoBehaviour
                 }
                 else
                 {
-                    LHandIK_Rifle.weight = Mathf.Lerp(LHandIK_Rifle.weight, 0f, 10f * Time.deltaTime);
-                    LHandIKAimed_Rifle.weight = Mathf.Lerp(LHandIKAimed_Rifle.weight, 0f, 10f * Time.deltaTime);
-
-                    LHandIK_Pistol.weight = Mathf.Lerp(LHandIK_Pistol.weight, 0f, 10f * Time.deltaTime);
-                    LHandIKAimed_Pistol.weight = Mathf.Lerp(LHandIKAimed_Pistol.weight, 1f, 10f * Time.deltaTime);
 
                     animator.SetLayerWeight(0, Mathf.Lerp(animator.GetLayerWeight(0), 0f, Time.deltaTime * 10f));
                     animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 10f));
@@ -136,13 +136,10 @@ public class PlayerAimController : MonoBehaviour
            RHandAim.weight = Mathf.Lerp(RHandAim.weight, 0f, 10f * Time.deltaTime);
             if (!reloading)
             {
+                LHandIK.weight = Mathf.Lerp(LHandIK.weight, 1f, 10f * Time.deltaTime);
+                LHandIKAimed.weight = Mathf.Lerp(LHandIKAimed.weight, 0f, 10f * Time.deltaTime);
                 if (!isPistol)
                 {
-                    LHandIK_Rifle.weight = Mathf.Lerp(LHandIK_Rifle.weight, 1f, 10f * Time.deltaTime);
-                    LHandIKAimed_Rifle.weight = Mathf.Lerp(LHandIKAimed_Rifle.weight, 0f, 10f * Time.deltaTime);
-
-                    LHandIK_Pistol.weight = Mathf.Lerp(LHandIK_Pistol.weight, 0f, 10f * Time.deltaTime);
-                    LHandIKAimed_Pistol.weight = Mathf.Lerp(LHandIKAimed_Pistol.weight, 0f, 10f * Time.deltaTime);
 
                     animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(2), 0f, Time.deltaTime * 10f));
                     animator.SetLayerWeight(3, Mathf.Lerp(animator.GetLayerWeight(3), 0f, Time.deltaTime * 10f));
@@ -152,12 +149,6 @@ public class PlayerAimController : MonoBehaviour
                 }
                 else
                 {
-                    LHandIK_Rifle.weight = Mathf.Lerp(LHandIK_Rifle.weight, 0f, 10f * Time.deltaTime);
-                    LHandIKAimed_Rifle.weight = Mathf.Lerp(LHandIKAimed_Rifle.weight, 0f, 10f * Time.deltaTime);
-
-                    LHandIK_Pistol.weight = Mathf.Lerp(LHandIK_Pistol.weight, 1f, 10f * Time.deltaTime);
-                    LHandIKAimed_Pistol.weight = Mathf.Lerp(LHandIKAimed_Pistol.weight, 0f, 10f * Time.deltaTime);
-
                     animator.SetLayerWeight(0, Mathf.Lerp(animator.GetLayerWeight(0), 0f, Time.deltaTime * 10f));
                     animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 10f));
 
@@ -173,12 +164,15 @@ public class PlayerAimController : MonoBehaviour
             Charactercontroller.ChangeSens(NormalSensitivity);
         }
 
+        if (choking == true)
+        {
+            RHandAim.weight = 0f;
+        }
+
         if (reloading == true)
         {
-            LHandIK_Rifle.weight = Mathf.Lerp(LHandIK_Rifle.weight, 0f, 10f * Time.deltaTime);
-            LHandIKAimed_Rifle.weight = Mathf.Lerp(LHandIKAimed_Rifle.weight, 0f, 10f * Time.deltaTime);
-            LHandIK_Pistol.weight = Mathf.Lerp(LHandIK_Pistol.weight, 0f, 10f * Time.deltaTime);
-            LHandIKAimed_Pistol.weight = Mathf.Lerp(LHandIKAimed_Pistol.weight, 0f, 10f * Time.deltaTime);
+            LHandIK.weight = Mathf.Lerp(LHandIK.weight, 0f, 10f * Time.deltaTime);
+            LHandIKAimed.weight = Mathf.Lerp(LHandIKAimed.weight, 0f, 10f * Time.deltaTime);
 
             if (!isPistol)
             {
@@ -193,16 +187,14 @@ public class PlayerAimController : MonoBehaviour
         if (hipfire)
         {
             RHandAim.weight = 1f;
-            if(!isPistol)
+            LHandIK.weight = 0f;
+            LHandIKAimed.weight = 1f;
+            if (!isPistol)
             {
-                LHandIK_Rifle.weight = 0f;
-                LHandIKAimed_Rifle.weight = 1f;
                 animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 1f, Time.deltaTime * 10f));
             }
             else
             {
-                LHandIK_Pistol.weight = 0f;
-                LHandIKAimed_Pistol.weight = 1f;
                 animator.SetLayerWeight(3, Mathf.Lerp(animator.GetLayerWeight(3), 1f, Time.deltaTime * 10f));
             }
             Vector3 WorldAim = MouseWorldPosition;
@@ -218,22 +210,38 @@ public class PlayerAimController : MonoBehaviour
 
             Inputs.interact = false;
         }
-        if(isPistol)
-        {
-            animator.SetBool("Pistol", true);
-            animator.SetBool("Rifle", false);
-        }
-        else
-        {
-            animator.SetBool("Pistol", false);
-            animator.SetBool("Rifle", true);
-        }
-
+        animator.SetBool("Pistol", isPistol);
+        animator.SetBool("Rifle", isRifle);
+        animator.SetBool("Shotgun", isShotgun);
     }
 
-    public void SwitchWeapon(bool pistol)
+    void Choked()
     {
-        isPistol = pistol;
+        choking = false;
+    }
+
+    public void SwitchWeapon(Item weapon)
+    {
+        if (weapon.type == weaponType.Pistol)
+        {
+            isPistol = true;
+            isRifle = false;
+            isShotgun = false;
+        }
+        else if(weapon.type == weaponType.Rifle)
+        {
+            isPistol = false;
+            isRifle = true;
+            isShotgun = false;
+        }
+        else if (weapon.type == weaponType.Shotgun)
+        {
+            isPistol = false;
+            isRifle = false;
+            isShotgun = true;
+        }
+
+
     }
 
     public void DisableAttacking()

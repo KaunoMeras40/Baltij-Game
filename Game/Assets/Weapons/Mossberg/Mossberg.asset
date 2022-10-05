@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 747a45847ad1e4449980af7c44c1817c, type: 3}
-  m_Name: M4A1
+  m_Name: Mossberg
   m_EditorClassIdentifier: 
-  itemName: M4A1
+  itemName: Mossberg
   damageModifier: 0
-  item: 0
-  type: 0
-  itemPrefab: {fileID: 4805867523516556958, guid: b7bff05957cec48499f284351b8cdf77,
+  item: 2
+  type: 2
+  itemPrefab: {fileID: 4191648434434026291, guid: a2682f9c62ecdff47a5fe4fa8f8d16d2,
     type: 3}
   pistol: 0
