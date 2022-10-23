@@ -240,8 +240,6 @@ public class PlayerAimController : MonoBehaviour
             isRifle = false;
             isShotgun = true;
         }
-
-
     }
 
     public void DisableAttacking()
