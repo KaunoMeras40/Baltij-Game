@@ -6,7 +6,7 @@ using StarterAssets;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.Animations.Rigging;
-
+using TMPro;
 
 public class PlayerAimController : MonoBehaviour
 {
@@ -58,6 +58,10 @@ public class PlayerAimController : MonoBehaviour
 
     public delegate void OnItemInteract();
     public OnItemInteract onItemInteractCallback;
+
+    [SerializeField] TextMeshProUGUI interactText;
+    [SerializeField] float itemRadius = 1f;
+
     void Awake()
     {
         instance = this;
@@ -86,6 +90,25 @@ public class PlayerAimController : MonoBehaviour
             hitPos = raycasthit1.point;
             aimPos.position = Vector3.Lerp(aimPos.position, raycasthit1.point, 20f * Time.deltaTime);
         }
+
+        GameObject[] items = GameObject.FindGameObjectsWithTag("PlayerWeapon");
+        foreach (GameObject item in items)
+        {
+            float distance = Vector3.Distance(transform.position, item.transform.position);
+            if (distance <= itemRadius)
+            {
+                Item itemObj = item.GetComponent<Interactable>().item;
+                string ItemName = itemObj.itemName;
+                interactText.gameObject.SetActive(true);
+                interactText.text = "Press E to pickup " + ItemName;
+                break;
+            }
+            else
+            {
+                interactText.gameObject.SetActive(false);
+            }
+        }
+      
 
         if (Inputs.aim && canAttack)
         {
