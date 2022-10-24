@@ -9,6 +9,7 @@ TagManager:
   - PlayerWeapon
   - Enemy
   - EnemySpawn
+  - Door
   layers:
   - Default
   - TransparentFX

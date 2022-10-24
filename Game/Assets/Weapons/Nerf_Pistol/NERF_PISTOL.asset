@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747a45847ad1e4449980af7c44c1817c, type: 3}
   m_Name: NERF_PISTOL
   m_EditorClassIdentifier: 
-  itemName: Nerf
+  itemName: Nerf Pistol
   damageModifier: 0
   item: 1
   type: 1
