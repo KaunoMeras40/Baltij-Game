@@ -47,9 +47,11 @@ public class PlayerManager : MonoBehaviour
                 {
                     aimController.LHandIK.weight = 0f;
                     aimController.LHandIKAimed.weight = 0f;
+                    aimController.GetComponent<CharacterStats>().RemoveDamage(currentWeapon.damageModifier);
                     Instantiate(currentWeapon.itemPrefab, player.transform.position, Quaternion.identity);
                 }
                 currentWeapon = weapon;
+                aimController.GetComponent<CharacterStats>().AddDamage(weapon.damageModifier);
                 item.SetActive(true);
                 player.GetComponent<PlayerAimController>().SwitchWeapon(weapon);
             }

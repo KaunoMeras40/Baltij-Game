@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mossberg
   m_EditorClassIdentifier: 
   itemName: Mossberg
-  damageModifier: 0
+  damageModifier: 20
   item: 2
   type: 2
   itemPrefab: {fileID: 3030953114826156264, guid: 81f30c133cb48234fa297f4373ba1e15,

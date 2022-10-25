@@ -409,7 +409,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 1
   interactionTransform: {fileID: 6037981659985305399}
+  hasOpened: 0
   item: {fileID: 11400000, guid: f84f58bba08d5464fa1448b953d9d8b9, type: 2}
+  door: 0
+  doorPrice: 0
 --- !u!54 &7856651954225824157
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -568,7 +571,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4427690938999512342}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.41570696, y: 0.16987364, z: -0.004231872}
+  m_LocalPosition: {x: -0.42, y: 0.17, z: -0.004}
   m_LocalScale: {x: -3.3339388, y: -3.3339388, z: -3.3339388}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -27,6 +27,6 @@ public class Item : ScriptableObject
     }
 }
 
-public enum itemTypeSlot { M4A1, NERF_PISTOL, MOSSBERG }
+public enum itemTypeSlot { M4A1, NERF_PISTOL, MOSSBERG, M1GARAND }
 
 public enum weaponType { Rifle, Pistol, Shotgun }
