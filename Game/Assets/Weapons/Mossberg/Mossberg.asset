@@ -16,6 +16,6 @@ MonoBehaviour:
   damageModifier: 0
   item: 2
   type: 2
-  itemPrefab: {fileID: 4191648434434026291, guid: a2682f9c62ecdff47a5fe4fa8f8d16d2,
+  itemPrefab: {fileID: 3030953114826156264, guid: 81f30c133cb48234fa297f4373ba1e15,
     type: 3}
   pistol: 0

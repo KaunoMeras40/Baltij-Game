@@ -6,7 +6,7 @@ using StarterAssets;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.Animations.Rigging;
-
+using TMPro;
 
 public class PlayerAimController : MonoBehaviour
 {
@@ -58,6 +58,13 @@ public class PlayerAimController : MonoBehaviour
 
     public delegate void OnItemInteract();
     public OnItemInteract onItemInteractCallback;
+
+    [SerializeField] TextMeshProUGUI interactText;
+    [SerializeField] float itemRadius = 1f;
+
+    [SerializeField] TextMeshProUGUI doorText;
+    float doorRadius = 1.4f;
+
     void Awake()
     {
         instance = this;
@@ -201,6 +208,54 @@ public class PlayerAimController : MonoBehaviour
             WorldAim.y = transform.position.y;
             Vector3 aimDirection = (WorldAim - transform.position).normalized;
             transform.forward = aimDirection;
+        }
+
+        GameObject[] items = GameObject.FindGameObjectsWithTag("PlayerWeapon");
+        GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
+        foreach (GameObject item in items)
+        {
+            float distance = Vector3.Distance(transform.position, item.transform.position);
+            if (distance <= itemRadius)
+            {
+                if (item.GetComponent<Interactable>())
+                {
+                    Item itemObj = item.GetComponent<Interactable>().item;
+                    if (itemObj)
+                    {
+                        string ItemName = itemObj.itemName;
+                        interactText.gameObject.SetActive(true);
+                        interactText.text = "Press E to pickup " + ItemName;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                interactText.gameObject.SetActive(false);
+            }
+        }
+
+        foreach (GameObject door in doors)
+        {
+            float distance = Vector3.Distance(transform.position, door.transform.position);
+            if (distance <= doorRadius)
+            {
+
+                if (door.GetComponent<Interactable>())
+                {
+                    if (door.GetComponent<Interactable>().hasOpened == false)
+                    {
+                        int price = door.GetComponent<Interactable>().doorPrice;
+                        doorText.gameObject.SetActive(true);
+                        doorText.text = "Press E unlock this door for " + price + "€";
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                doorText.gameObject.SetActive(false);
+            }
         }
 
         if (Inputs.interact)
