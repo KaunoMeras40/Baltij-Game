@@ -16,6 +16,7 @@ public class WeaponManager : MonoBehaviour
     PlayerAimController aimController;
 
     [SerializeField] private Transform shootingPoint;
+    [SerializeField] private ParticleSystem cartrigeParticle;
     [SerializeField] private GameObject BulletPrefab;
 
     [SerializeField] AudioClip gunShot;
@@ -40,6 +41,8 @@ public class WeaponManager : MonoBehaviour
     public TwoBoneIKConstraint LHandIKAimed;
 
     private CharacterStats charStats;
+
+    PlayerManager playerManager;
     void Start()
     {
         fireRateTimer = fireRate;
@@ -48,6 +51,7 @@ public class WeaponManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         ammo = GetComponent<WeaponAmmo>();
         charStats = GetComponentInParent<CharacterStats>();
+        playerManager = PlayerManager.Instance;
     }
     void Update()
     {
@@ -66,9 +70,10 @@ public class WeaponManager : MonoBehaviour
         {
             return false;
         }
-        //if (ammo.currentAmmo == 0) return false;
+        //if (ammo.currentAmmo == 0) return false;  && playerManager.canShoot
         if (Inputs.sprint == true && aimController.aimed == false) return false;
         if (aimController.reloading == true) return false;
+        if (playerManager.canShoot == false) return false;
         if (semiAuto && Inputs.shoot && !hasShot) return true;
         if (!semiAuto && Inputs.shoot) return true;
         return false;
@@ -114,6 +119,7 @@ public class WeaponManager : MonoBehaviour
             }
             else
             {
+                cartrigeParticle.Play();
                 GameObject currentBullet = Instantiate(BulletPrefab, shootingPoint.position, Quaternion.identity);
                 currentBullet.GetComponent<Bullet>().damage = charStats.damage.GetValue();
                 Rigidbody rb = currentBullet.GetComponent<Rigidbody>();

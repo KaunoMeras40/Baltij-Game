@@ -408,13 +408,13 @@ namespace StarterAssets
         {
             if (aimed == true)
             {
-                MoveSpeed = PlayerAimController.instance.DefaultWalkSpeed - 1f; // 3f
-                SprintSpeed = PlayerAimController.instance.DefaultSprintSpeed - 1f; // 3f
+                MoveSpeed = PlayerAimController.instance.DefaultWalkSpeed - 1f * PlayerAimController.instance.SpeedModifier.GetValue();
+                SprintSpeed = PlayerAimController.instance.DefaultSprintSpeed - 1f * PlayerAimController.instance.SpeedModifier.GetValue();
             }
             else if (aimed == false)
             {
-                MoveSpeed = PlayerAimController.instance.DefaultWalkSpeed;
-                SprintSpeed = PlayerAimController.instance.DefaultSprintSpeed;
+                MoveSpeed = PlayerAimController.instance.DefaultWalkSpeed * PlayerAimController.instance.SpeedModifier.GetValue();
+                SprintSpeed = PlayerAimController.instance.DefaultSprintSpeed * PlayerAimController.instance.SpeedModifier.GetValue();
             }
         }
 

@@ -28,12 +28,15 @@ public class PlayerAimController : MonoBehaviour
 
     public float DefaultWalkSpeed;
     public float DefaultSprintSpeed;
+
+    public Stat SpeedModifier;
     public bool aimed { get; private set; }
 
     bool canAttack = true;
 
     private StarterAssetsInputs Inputs;
     private ThirdPersonController Charactercontroller;
+    private PlayerManager playerManager;
 
     [SerializeField] private MultiAimConstraint BodyAim;
     [SerializeField] private MultiAimConstraint HeadAim;
@@ -60,10 +63,8 @@ public class PlayerAimController : MonoBehaviour
     public OnItemInteract onItemInteractCallback;
 
     [SerializeField] TextMeshProUGUI interactText;
-    [SerializeField] float itemRadius = 1f;
 
-    [SerializeField] TextMeshProUGUI doorText;
-    float doorRadius = 1.4f;
+    public Interactable currentInteractable;
 
     void Awake()
     {
@@ -74,7 +75,7 @@ public class PlayerAimController : MonoBehaviour
     }
     private void Start()
     {
-        
+        playerManager = PlayerManager.Instance;
     }
     void Update()
     {
@@ -96,7 +97,6 @@ public class PlayerAimController : MonoBehaviour
 
         if (Inputs.aim && canAttack)
         {
-
             BodyAim.weight = Mathf.Lerp(BodyAim.weight, 0.5f, 10f * Time.deltaTime);
             HeadAim.weight = Mathf.Lerp(HeadAim.weight, 1f, 10f * Time.deltaTime);
             RHandAim.weight = Mathf.Lerp(RHandAim.weight, 1f, 10f * Time.deltaTime);
@@ -210,64 +210,48 @@ public class PlayerAimController : MonoBehaviour
             transform.forward = aimDirection;
         }
 
-        GameObject[] items = GameObject.FindGameObjectsWithTag("PlayerWeapon");
-        GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
-        foreach (GameObject item in items)
+        if (currentInteractable != null)
         {
-            float distance = Vector3.Distance(transform.position, item.transform.position);
-            if (distance <= itemRadius)
+            if (currentInteractable.door)
             {
-                if (item.GetComponent<Interactable>())
+                if (currentInteractable.hasOpened == false)
                 {
-                    Item itemObj = item.GetComponent<Interactable>().item;
-                    if (itemObj)
-                    {
-                        string ItemName = itemObj.itemName;
-                        interactText.gameObject.SetActive(true);
-                        interactText.text = "Press E to pickup " + ItemName;
-                        break;
-                    }
+                    int price = currentInteractable.doorPrice;
+                    interactText.gameObject.SetActive(true);
+                    interactText.text = "Press E unlock this door for " + price + "€";
                 }
             }
-            else
+            else if(currentInteractable.vendingMachine)
             {
-                interactText.gameObject.SetActive(false);
+                interactText.gameObject.SetActive(true);
+                interactText.text = "Press E to open this vending machine";
+            }
+            else if (currentInteractable.vendingMachine == false && currentInteractable.door == false)
+            {
+                string ItemName = currentInteractable.item.itemName;
+                interactText.gameObject.SetActive(true);
+                interactText.text = "Press E to pickup " + ItemName;
             }
         }
-
-        foreach (GameObject door in doors)
+        else
         {
-            float distance = Vector3.Distance(transform.position, door.transform.position);
-            if (distance <= doorRadius)
-            {
-
-                if (door.GetComponent<Interactable>())
-                {
-                    if (door.GetComponent<Interactable>().hasOpened == false)
-                    {
-                        int price = door.GetComponent<Interactable>().doorPrice;
-                        doorText.gameObject.SetActive(true);
-                        doorText.text = "Press E unlock this door for " + price + "€";
-                        break;
-                    }
-                }
-            }
-            else
-            {
-                doorText.gameObject.SetActive(false);
-            }
+            interactText.gameObject.SetActive(false);
         }
 
         if (Inputs.interact)
         {
-            if (onItemInteractCallback != null)
-                onItemInteractCallback.Invoke();
+            if (currentInteractable != null)
+            {
+                currentInteractable.Interact();
+            }
 
             Inputs.interact = false;
         }
         animator.SetBool("Pistol", isPistol);
         animator.SetBool("Rifle", isRifle);
         animator.SetBool("Shotgun", isShotgun);
+
+        animator.SetBool("Aiming", aimed);
     }
 
     void Choked()
@@ -277,19 +261,19 @@ public class PlayerAimController : MonoBehaviour
 
     public void SwitchWeapon(Item weapon)
     {
-        if (weapon.type == weaponType.Pistol)
+        if (weapon.weaponType == weaponType.Pistol)
         {
             isPistol = true;
             isRifle = false;
             isShotgun = false;
         }
-        else if(weapon.type == weaponType.Rifle)
+        else if(weapon.weaponType == weaponType.Rifle)
         {
             isPistol = false;
             isRifle = true;
             isShotgun = false;
         }
-        else if (weapon.type == weaponType.Shotgun)
+        else if (weapon.weaponType == weaponType.Shotgun)
         {
             isPistol = false;
             isRifle = false;

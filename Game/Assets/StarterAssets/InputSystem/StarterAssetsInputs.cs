@@ -45,6 +45,14 @@ namespace StarterAssets
 			if(cursorInputForLook)
 			{
 				LookInput(value.Get<Vector2>());
+				if (cursorLocked == false)
+				{
+					Cursor.lockState = CursorLockMode.Confined;
+				}
+				else
+				{
+					Cursor.lockState = CursorLockMode.Locked;
+				}
 			}
 		}
 

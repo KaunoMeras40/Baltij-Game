@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 747a45847ad1e4449980af7c44c1817c, type: 3}
+  m_Name: NERF_PISTOL
+  m_EditorClassIdentifier: 
+  itemName: Nerf Pistol
+  damageModifier: 0
+  item: 1
+  weaponType: 1
+  consumableType: 1
+  itemPrefab: {fileID: 3449581146626156773, guid: 6e545963655254b4dbccab8e4ea059ec,
+    type: 3}
+  pistol: 1
+  itemIcon: {fileID: 0}
+  itemPrice: 10

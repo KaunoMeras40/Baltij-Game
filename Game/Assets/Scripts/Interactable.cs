@@ -12,12 +12,16 @@ public class Interactable : MonoBehaviour
 	Transform player;
 
 	bool hasInteracted = false;
-	[HideInInspector] public bool hasOpened = false;
-
 	public Item item;
 
-	[SerializeField] bool door;
+	public string description;
+
+	public bool door;
 	public int doorPrice;
+	[HideInInspector] public bool hasOpened = false;
+
+	public bool vendingMachine;
+	[SerializeField] GameObject vendingMachineObject;
 
 	private void Start()
 	{
@@ -25,7 +29,19 @@ public class Interactable : MonoBehaviour
 		controller = PlayerAimController.instance;
 		controller.onItemInteractCallback += CheckInteract;
 	}
-	public virtual void Interact()
+
+    private void Update()
+	{
+		if (!hasInteracted)
+		{
+			float distance = Vector3.Distance(player.position, interactionTransform.position);
+			if (distance <= radius)
+			{
+				controller.currentInteractable = this;
+			}
+		}
+	}
+    public virtual void Interact()
 	{
 		if (door == true && hasOpened == false)
         {
@@ -37,6 +53,10 @@ public class Interactable : MonoBehaviour
 				Debug.Log("OPEN");
 				hasOpened = true;
 			}
+		}
+		else if (vendingMachine == true)
+        {
+			PlayerManager.Instance.OpenVM(vendingMachineObject);
 		}
 		else
         {

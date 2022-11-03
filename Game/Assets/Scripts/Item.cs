@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
 public class Item : ScriptableObject
@@ -10,11 +11,16 @@ public class Item : ScriptableObject
 
     public itemTypeSlot item;
 
-    public weaponType type;
+    public weaponType weaponType;
+
+    public itemType consumableType;
 
     public GameObject itemPrefab;
 
     public bool pistol;
+
+    public Sprite itemIcon;
+    public int itemPrice;
     public virtual void Equip()
     {
         Debug.Log("Equipping " + name);
@@ -27,6 +33,7 @@ public class Item : ScriptableObject
     }
 }
 
-public enum itemTypeSlot { M4A1, NERF_PISTOL, MOSSBERG, M1GARAND }
+public enum itemTypeSlot { M4A1, NERF_PISTOL, MOSSBERG, M14, CONSUMABLE }
 
-public enum weaponType { Rifle, Pistol, Shotgun }
+public enum weaponType { Rifle, Pistol, Shotgun, NONE }
+public enum itemType { Pepsi, Redbull, Xanax, Zaza, NONE }

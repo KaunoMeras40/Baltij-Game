@@ -154,6 +154,13 @@ public class CharacterStats : MonoBehaviour
         health = maxHealth.GetValue();
     }
 
+    public void AddMaxHealth(int amount)
+    {
+        maxHealth.AddModifier(amount);
+        health = maxHealth.GetValue();
+        UpdateBars();
+    }
+
     public void AddHealth(int amount)
     {
         health += amount;
