@@ -110,18 +110,23 @@ public class PlayerManager : MonoBehaviour
     public void AddPowerup(Item powerup)
     {
         CharacterStats charStats = aimController.GetComponent<CharacterStats>();
+        powerups.Add(powerup);
         if (powerup.consumableType == itemType.Pepsi)
         {
             float healthAmount = charStats.maxHealth.GetValue() * 0.1f;
             charStats.AddMaxHealth(Mathf.RoundToInt(healthAmount));
-            powerups.Add(powerup);
         }
         else if (powerup.consumableType == itemType.Redbull)
         {
-            aimController.SpeedModifier.AddModifier(0.5f);
-            float healthAmount = charStats.maxHealth.GetValue() * 0.1f;
-            charStats.AddMaxHealth(Mathf.RoundToInt(healthAmount));
-            powerups.Add(powerup);
+            CharacterModifiers.instance.SpeedModifier.AddModifier(0.05f);
+        }
+        else if (powerup.consumableType == itemType.Xanax)
+        {
+            charStats.damage.AddModifier(10);
+        }
+        else if (powerup.consumableType == itemType.Zaza)
+        {
+            CharacterModifiers.instance.HealModifier.AddModifier(0.25f);
         }
     }
 

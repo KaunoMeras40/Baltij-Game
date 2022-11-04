@@ -37,7 +37,7 @@ public class CharacterStats : MonoBehaviour
     private void Start()
     {
         dead = false;
-        health = maxHealth.GetValue();
+        health = Mathf.RoundToInt(maxHealth.GetValue());
         if (IsPlayer)
         {
            // healthbar.SetMaxHealth(maxHealth.GetValue());
@@ -55,7 +55,8 @@ public class CharacterStats : MonoBehaviour
         {
             if (health < maxHealth.GetValue())
             {
-                health += 1;
+                float amount = 0.5f + CharacterModifiers.instance.HealModifier.GetValue();
+                health += Mathf.RoundToInt(amount);
                // healthbar.SetCurrentHealth(health);
                 yield return new WaitForSeconds(1.5f);
             }

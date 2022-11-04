@@ -28,8 +28,6 @@ public class PlayerAimController : MonoBehaviour
 
     public float DefaultWalkSpeed;
     public float DefaultSprintSpeed;
-
-    public Stat SpeedModifier;
     public bool aimed { get; private set; }
 
     bool canAttack = true;
@@ -252,6 +250,7 @@ public class PlayerAimController : MonoBehaviour
         animator.SetBool("Shotgun", isShotgun);
 
         animator.SetBool("Aiming", aimed);
+        animator.SetBool("Sprint", Inputs.sprint);
     }
 
     void Choked()

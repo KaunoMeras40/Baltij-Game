@@ -222,7 +222,6 @@ namespace StarterAssets
         {
             // set target speed based on move speed, sprint speed and if sprint is pressed
             float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
-
             // a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
 
             // note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
@@ -408,13 +407,13 @@ namespace StarterAssets
         {
             if (aimed == true)
             {
-                MoveSpeed = PlayerAimController.instance.DefaultWalkSpeed - 1f * PlayerAimController.instance.SpeedModifier.GetValue();
-                SprintSpeed = PlayerAimController.instance.DefaultSprintSpeed - 1f * PlayerAimController.instance.SpeedModifier.GetValue();
+                MoveSpeed = PlayerAimController.instance.DefaultWalkSpeed - 1f * CharacterModifiers.instance.SpeedModifier.GetValue();
+                SprintSpeed = PlayerAimController.instance.DefaultSprintSpeed - 1f * CharacterModifiers.instance.SpeedModifier.GetValue();
             }
             else if (aimed == false)
             {
-                MoveSpeed = PlayerAimController.instance.DefaultWalkSpeed * PlayerAimController.instance.SpeedModifier.GetValue();
-                SprintSpeed = PlayerAimController.instance.DefaultSprintSpeed * PlayerAimController.instance.SpeedModifier.GetValue();
+                MoveSpeed = PlayerAimController.instance.DefaultWalkSpeed * CharacterModifiers.instance.SpeedModifier.GetValue();
+                SprintSpeed = PlayerAimController.instance.DefaultSprintSpeed * CharacterModifiers.instance.SpeedModifier.GetValue();
             }
         }
 
