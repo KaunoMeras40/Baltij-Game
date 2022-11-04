@@ -244,6 +244,7 @@ MonoBehaviour:
   hitEffect: {fileID: 3644747646193194528, guid: 6c5d2230fecd6794e97c0325ea4e30fe,
     type: 3}
   damage: 0
+  lifeSteal: 1
 --- !u!82 &3799206024563333508
 AudioSource:
   m_ObjectHideFlags: 0

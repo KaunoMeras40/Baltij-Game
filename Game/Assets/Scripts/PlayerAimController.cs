@@ -34,6 +34,7 @@ public class PlayerAimController : MonoBehaviour
 
     private StarterAssetsInputs Inputs;
     private ThirdPersonController Charactercontroller;
+    private CharacterStats charStats;
     private PlayerManager playerManager;
 
     [SerializeField] private MultiAimConstraint BodyAim;
@@ -70,6 +71,7 @@ public class PlayerAimController : MonoBehaviour
         Charactercontroller = GetComponent<ThirdPersonController>();
         Inputs = GetComponent<StarterAssetsInputs>();
         animator = GetComponent<Animator>();
+        charStats = GetComponent<CharacterStats>();
     }
     private void Start()
     {
@@ -313,6 +315,11 @@ public class PlayerAimController : MonoBehaviour
     void StopAimToTarget()
     {
         hipfire = false;
+    }
+
+    public void AddHealth(int health)
+    {
+        charStats.AddHealth(health);
     }
 
     private void MagazineOut()
