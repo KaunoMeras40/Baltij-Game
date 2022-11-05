@@ -140,6 +140,10 @@ public class PlayerManager : MonoBehaviour
         {
             charStats.AddArmor(10);
         }
+        else if (powerup.consumableType == itemType.Benadryl)
+        {
+            CharacterModifiers.instance.CriticalStrikeModifier.AddModifier(0.1f);
+        }
         powerupName.gameObject.SetActive(true);
         powerupName.text = powerup.itemName;
         powerupDescription.text = powerup.description;
