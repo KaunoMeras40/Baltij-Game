@@ -69,7 +69,7 @@ public class CharacterStats : MonoBehaviour
     public void TakeDamage(int damage)
     {
         float defence = (float)damage / 100f * (float)armor.GetValue();
-        damage -= (int)defence;
+        damage -= Mathf.RoundToInt(defence);
         health -= damage;
         animator.SetTrigger("Hit");
         float random = Random.Range(0f, 2f);

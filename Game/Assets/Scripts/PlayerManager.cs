@@ -25,6 +25,9 @@ public class PlayerManager : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI weaponName;
     [SerializeField] TextMeshProUGUI moneyAmount;
+    [SerializeField] TextMeshProUGUI powerupName;
+    [SerializeField] TextMeshProUGUI powerupDescription;
+
     PlayerAimController aimController;
 
     public int playerMoney;
@@ -38,6 +41,7 @@ public class PlayerManager : MonoBehaviour
     GameObject[] allInteractables;
 
     [SerializeField] List<Item> powerups;
+
     private void Start()
     {
         playerMoney = 500;
@@ -122,12 +126,29 @@ public class PlayerManager : MonoBehaviour
         }
         else if (powerup.consumableType == itemType.Xanax)
         {
-            charStats.damage.AddModifier(10);
+            charStats.AddDamage(10);
         }
         else if (powerup.consumableType == itemType.Zaza)
         {
             CharacterModifiers.instance.HealModifier.AddModifier(0.25f);
         }
+        else if (powerup.consumableType == itemType.Meth)
+        {
+            CharacterModifiers.instance.LifestealModifier.AddModifier(0.05f);
+        }
+        else if (powerup.consumableType == itemType.THC)
+        {
+            charStats.AddArmor(10);
+        }
+        powerupName.gameObject.SetActive(true);
+        powerupName.text = powerup.itemName;
+        powerupDescription.text = powerup.description;
+        Invoke(nameof(DisablePowerupText), 4.5f);
+    }
+
+    void DisablePowerupText()
+    {
+        powerupName.gameObject.SetActive(false);
     }
 
     public void OpenVM(GameObject VM)

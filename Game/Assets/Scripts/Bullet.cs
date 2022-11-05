@@ -28,12 +28,20 @@ public class Bullet : MonoBehaviour
             main2.simulationSpeed = 2;
             ps2.Play();
             ps2.GetComponent<AudioSource>().Play();
-            other.GetComponent<CharacterStats>().TakeDamage(damage);
             float amount = damage * CharacterModifiers.instance.LifestealModifier.GetValue();
             if(amount > 0)
             {
+                // Lifesteal
                 PlayerAimController.instance.AddHealth(Mathf.RoundToInt(amount));
             }
+            int ran = Random.Range(1, 100);
+            if (ran < CharacterModifiers.instance.CriticalStrikeModifier.GetValue() * 100f)
+            {
+                // Critical Strike
+                float dmg = damage * 1.5f;
+                damage = Mathf.RoundToInt(dmg);
+            }
+            other.GetComponent<CharacterStats>().TakeDamage(damage);
             if (other.GetComponent<CharacterStats>().IsPlayer == true)
             {
                 other.GetComponent<CharacterStats>().Shake(2f, 0.3f, 20f);

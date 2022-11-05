@@ -21,6 +21,8 @@ public class Item : ScriptableObject
 
     public Sprite itemIcon;
     public int itemPrice;
+
+    public string description;
     public virtual void Equip()
     {
         Debug.Log("Equipping " + name);

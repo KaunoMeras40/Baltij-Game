@@ -14,8 +14,6 @@ public class Interactable : MonoBehaviour
 	bool hasInteracted = false;
 	public Item item;
 
-	public string description;
-
 	public bool door;
 	public int doorPrice;
 	[HideInInspector] public bool hasOpened = false;
