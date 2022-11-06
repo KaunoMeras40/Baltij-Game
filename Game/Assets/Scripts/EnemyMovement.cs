@@ -84,11 +84,10 @@ public class EnemyMovement : MonoBehaviour
 
     public void OnDeath()
     {
-        int chance = Random.Range(1, 7);
-        if (chance == 1)
+        int ran = Random.Range(1, 100);
+        if (ran < 7f)
         {
-            Transform ammo = Instantiate(ammoBox, transform.position, Quaternion.identity).transform;
-            ammo.GetComponent<AmmoBox>().setAmount(Random.Range(10, 30));
+            Instantiate(ammoBox, transform.position, Quaternion.identity);
         }
         this.enabled = false;
     }

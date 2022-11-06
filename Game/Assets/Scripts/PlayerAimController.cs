@@ -212,7 +212,7 @@ public class PlayerAimController : MonoBehaviour
 
         if (currentInteractable != null)
         {
-            if (currentInteractable.door)
+            if (currentInteractable.interactable == interactableType.Door)
             {
                 if (currentInteractable.hasOpened == false)
                 {
@@ -221,16 +221,24 @@ public class PlayerAimController : MonoBehaviour
                     interactText.text = "Press E unlock this door for " + price + "€";
                 }
             }
-            else if(currentInteractable.vendingMachine)
+            else if(currentInteractable.interactable == interactableType.VendingMachine)
             {
                 interactText.gameObject.SetActive(true);
                 interactText.text = "Press E to open this vending machine";
             }
-            else if (currentInteractable.vendingMachine == false && currentInteractable.door == false)
+            else if (currentInteractable.interactable == interactableType.Default)
             {
                 string ItemName = currentInteractable.item.itemName;
                 interactText.gameObject.SetActive(true);
                 interactText.text = "Press E to pickup " + ItemName;
+            }
+            else if (currentInteractable.interactable == interactableType.WeaponBuy)
+            {
+                int Startprice = currentInteractable.item.itemPrice;
+                int price = Mathf.RoundToInt(Startprice * playerManager.WeaponWallPriceModifier);
+                string ItemName = currentInteractable.item.itemName;
+                interactText.gameObject.SetActive(true);
+                interactText.text = "Press E to buy " + ItemName + " for " + price + "€";
             }
         }
         else

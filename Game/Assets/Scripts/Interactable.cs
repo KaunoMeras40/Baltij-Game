@@ -14,12 +14,12 @@ public class Interactable : MonoBehaviour
 	bool hasInteracted = false;
 	public Item item;
 
-	public bool door;
 	public int doorPrice;
 	[HideInInspector] public bool hasOpened = false;
 
-	public bool vendingMachine;
 	[SerializeField] GameObject vendingMachineObject;
+
+	public interactableType interactable;
 
 	private void Start()
 	{
@@ -41,10 +41,10 @@ public class Interactable : MonoBehaviour
 	}
     public virtual void Interact()
 	{
-		if (door == true && hasOpened == false)
+		if (interactable == interactableType.Door && hasOpened == false)
         {
 			if (PlayerManager.Instance.playerMoney >= doorPrice)
-            {
+			{
 				// opoen
 				// animation
 				PlayerManager.Instance.playerMoney -= doorPrice;
@@ -52,12 +52,16 @@ public class Interactable : MonoBehaviour
 				hasOpened = true;
 			}
 		}
-		else if (vendingMachine == true)
+		else if (interactable == interactableType.VendingMachine)
         {
 			PlayerManager.Instance.OpenVM(vendingMachineObject);
 		}
-		else
-        {
+		else if (interactable == interactableType.WeaponBuy)
+		{
+			PlayerManager.Instance.WeaponWall_Purchase(item, this.gameObject);
+		}
+		else if (interactable == interactableType.Default)
+		{
 			hasInteracted = true;
 			item.Equip();
 			Destroy(gameObject);
@@ -85,3 +89,5 @@ public class Interactable : MonoBehaviour
 	}
 
 }
+
+public enum interactableType { Default, Door, VendingMachine, WeaponBuy }

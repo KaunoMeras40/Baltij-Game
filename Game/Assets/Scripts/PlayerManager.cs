@@ -42,6 +42,8 @@ public class PlayerManager : MonoBehaviour
 
     [SerializeField] List<Item> powerups;
 
+    public float WeaponWallPriceModifier;
+
     private void Start()
     {
         playerMoney = 500;
@@ -159,6 +161,18 @@ public class PlayerManager : MonoBehaviour
     {
         VM.SetActive(true);
         VM.GetComponent<VendingMachine>().SetupVM();
+    }
+
+    public void WeaponWall_Purchase(Item weapon, GameObject obj)
+    {
+        int Startprice = weapon.itemPrice;
+        int price = Mathf.RoundToInt(Startprice * WeaponWallPriceModifier);
+        if (playerMoney >= price)
+        {
+            playerMoney -= price;
+            switchWeapon(weapon);
+            Destroy(obj);
+        }
     }
 
     public void VendingMachine_Purchase(Item item, bool weapon, int price)

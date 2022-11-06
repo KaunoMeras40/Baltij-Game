@@ -11,6 +11,7 @@ public class WeaponAmmo : MonoBehaviour
     [SerializeField] TextMeshProUGUI ammoText;
 
     [HideInInspector] public int currentAmmo;
+    public ammoTypes ammoType;
 
     Animator animator;
     StarterAssetsInputs Inputs;
@@ -72,7 +73,6 @@ public class WeaponAmmo : MonoBehaviour
     {
         extraAmmo += amount;
     }
-
-
-
 }
+
+public enum ammoTypes { Light, Medium, Heavy, Slugs}
