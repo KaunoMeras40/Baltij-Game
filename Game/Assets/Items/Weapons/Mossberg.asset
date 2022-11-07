@@ -16,9 +16,10 @@ MonoBehaviour:
   damageModifier: 20
   item: 2
   weaponType: 2
-  consumableType: 1
+  consumableType: 7
   itemPrefab: {fileID: 3030953114826156264, guid: 81f30c133cb48234fa297f4373ba1e15,
     type: 3}
   pistol: 0
   itemIcon: {fileID: 0}
   itemPrice: 300
+  description: 

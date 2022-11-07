@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: M4A1
   m_EditorClassIdentifier: 
   itemName: M4A1
-  damageModifier: 0
+  damageModifier: 10
   item: 0
   weaponType: 0
-  consumableType: 1
+  consumableType: 7
   itemPrefab: {fileID: 4805867523516556958, guid: b7bff05957cec48499f284351b8cdf77,
     type: 3}
   pistol: 0
   itemIcon: {fileID: 0}
   itemPrice: 499
+  description: 

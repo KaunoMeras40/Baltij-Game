@@ -15,7 +15,7 @@ public class VendingMachine : MonoBehaviour
     [SerializeField] GameObject vendingUI_1;
     [SerializeField] GameObject vendingUI_2;
 
-    bool isSetup;
+    [HideInInspector] public bool isSetup;
     bool closed;
     private void Start()
     {

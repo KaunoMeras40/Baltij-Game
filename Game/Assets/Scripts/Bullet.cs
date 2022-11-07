@@ -35,7 +35,7 @@ public class Bullet : MonoBehaviour
                 PlayerAimController.instance.AddHealth(Mathf.RoundToInt(amount));
             }
             int ran = Random.Range(1, 100);
-            if (ran < CharacterModifiers.instance.CriticalStrikeModifier.GetValue() * 100f)
+            if (ran <= CharacterModifiers.instance.CriticalStrikeModifier.GetValue() * 100f)
             {
                 // Critical Strike
                 float dmg = damage * 1.5f;
