@@ -10317,6 +10317,7 @@ GameObject:
   - component: {fileID: 4805867523516556959}
   - component: {fileID: 7184068788771732174}
   - component: {fileID: 6194871606227002332}
+  - component: {fileID: -6143488588124894681}
   m_Layer: 10
   m_Name: M4A1_Item
   m_TagString: PlayerWeapon
@@ -10357,6 +10358,10 @@ MonoBehaviour:
   radius: 1
   interactionTransform: {fileID: 4805867523516556957}
   item: {fileID: 11400000, guid: f6ebeb8325bd85649ba15941efd8fad3, type: 2}
+  doorPrice: 0
+  hasOpened: 0
+  vendingMachineObject: {fileID: 0}
+  interactable: 0
 --- !u!54 &7184068788771732174
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10386,6 +10391,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.98633754, y: 0.44975877, z: 0.065405585}
   m_Center: {x: -0.13379359, y: 0.08713885, z: 0.01626737}
+--- !u!114 &-6143488588124894681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4805867523516556958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2715ee3b27aa837419fa9d44139c3feb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4805867523616136127
 GameObject:
   m_ObjectHideFlags: 0

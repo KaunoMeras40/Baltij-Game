@@ -17,7 +17,7 @@ public class Interactable : MonoBehaviour
 	public int doorPrice;
 	[HideInInspector] public bool hasOpened = false;
 
-	[SerializeField] GameObject vendingMachineObject;
+	public GameObject vendingMachineObject;
 
 	public interactableType interactable;
 
@@ -58,7 +58,7 @@ public class Interactable : MonoBehaviour
 		}
 		else if (interactable == interactableType.WeaponBuy)
 		{
-			PlayerManager.Instance.WeaponWall_Purchase(item, this.gameObject);
+			PlayerManager.Instance.WeaponWall_Purchase(item, GetComponentInChildren<ItemObject>().gameObject, this);
 		}
 		else if (interactable == interactableType.Default)
 		{

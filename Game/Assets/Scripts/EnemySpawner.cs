@@ -13,6 +13,7 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI waveNumber;
     [SerializeField] TextMeshProUGUI enemyAmount;
+    [SerializeField] TextMeshProUGUI newWaveText;
 
     [SerializeField] private string[] weapons;
 
@@ -58,7 +59,11 @@ public class EnemySpawner : MonoBehaviour
         spawnedEnemies = 0;
         enemiesAlive = 0;
         ScaleUpSpawns();
-        yield return new WaitForSeconds(5f);
+
+        newWaveText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(10f);
+        LoopManager.Instance.NewWave();
+        newWaveText.gameObject.SetActive(false);
 
         WaitForSeconds Wait = new WaitForSeconds(SpawnDelay);
 
@@ -74,6 +79,7 @@ public class EnemySpawner : MonoBehaviour
 
         if (alive.Length == 0 && spawnedEnemies == NumberOfEnemiesToSpawn)
         {
+            // New wave
             StartCoroutine(SpawnEnemies());
         }
         waveNumber.text = "Wave " + currentWave.ToString();

@@ -234,11 +234,14 @@ public class PlayerAimController : MonoBehaviour
             }
             else if (currentInteractable.interactable == interactableType.WeaponBuy)
             {
-                int Startprice = currentInteractable.item.itemPrice;
-                int price = Mathf.RoundToInt(Startprice * playerManager.WeaponWallPriceModifier);
-                string ItemName = currentInteractable.item.itemName;
-                interactText.gameObject.SetActive(true);
-                interactText.text = "Press E to buy " + ItemName + " for " + price + "€";
+                if (currentInteractable.item != null)
+                {
+                    int Startprice = currentInteractable.item.itemPrice;
+                    int price = Mathf.RoundToInt(Startprice * playerManager.WeaponWallPriceModifier);
+                    string ItemName = currentInteractable.item.itemName;
+                    interactText.gameObject.SetActive(true);
+                    interactText.text = "Press E to buy " + ItemName + " for " + price + "€";
+                }
             }
         }
         else

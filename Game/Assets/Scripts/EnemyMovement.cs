@@ -85,7 +85,7 @@ public class EnemyMovement : MonoBehaviour
     public void OnDeath()
     {
         int ran = Random.Range(1, 100);
-        if (ran < 7f)
+        if (ran < 6f)
         {
             Instantiate(ammoBox, transform.position, Quaternion.identity);
         }

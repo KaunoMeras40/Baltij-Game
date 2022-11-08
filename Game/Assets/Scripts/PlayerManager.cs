@@ -163,7 +163,7 @@ public class PlayerManager : MonoBehaviour
         VM.GetComponent<VendingMachine>().SetupVM();
     }
 
-    public void WeaponWall_Purchase(Item weapon, GameObject obj)
+    public void WeaponWall_Purchase(Item weapon, GameObject obj, Interactable inter)
     {
         int Startprice = weapon.itemPrice;
         int price = Mathf.RoundToInt(Startprice * WeaponWallPriceModifier);
@@ -171,6 +171,7 @@ public class PlayerManager : MonoBehaviour
         {
             playerMoney -= price;
             switchWeapon(weapon);
+            inter.item = null;
             Destroy(obj);
         }
     }

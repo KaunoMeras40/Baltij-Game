@@ -22,10 +22,12 @@ public class LoopManager : MonoBehaviour
     [SerializeField] List<Transform> VendingMachine_Spawns;
     [SerializeField] List<Transform> WeaponBoards;
 
+    bool FirstWave = true;
+    bool SpawnedObjects = false;
+
     void Start()
     {
-        Invoke(nameof(SpawnWeaponBoards), 2f);
-        Invoke(nameof(SpawnVendingMachines), 2f);
+
     }
 
     // Update is called once per frame
@@ -34,8 +36,22 @@ public class LoopManager : MonoBehaviour
         
     }
 
+    void CleanWeaponBoards()
+    {
+        List<Transform> allBoards = new List<Transform>(WeaponBoards);
+        foreach (Transform board in allBoards)
+        {
+            if (board.GetComponentInChildren<ItemObject>())
+            {
+                Destroy(board.GetComponentInChildren<ItemObject>().gameObject);
+                board.GetComponent<Interactable>().item = null;
+            }
+        }
+    }
+
     void SpawnWeaponBoards()
     {
+        CleanWeaponBoards();
         List<Transform> allBoards = new List<Transform>(WeaponBoards);
         List<Item> allWeapons = new List<Item>(PlayerManager.Instance.VM_Weapons);
         ShuffleList(allWeapons);
@@ -67,6 +83,7 @@ public class LoopManager : MonoBehaviour
 
     void SpawnVendingMachines()
     {
+        Debug.Log("SPAWNING");
         List<Transform> allSpawns = new List<Transform>(VendingMachine_Spawns);
 
         int int1 = Random.Range(0, allSpawns.Count);
@@ -79,7 +96,36 @@ public class LoopManager : MonoBehaviour
         VendingMachine1.position = spawn.position;
         VendingMachine2.position = spawn2.position;
 
-        VendingMachine1.GetComponent<VendingMachine>().isSetup = false;
-        VendingMachine2.GetComponent<VendingMachine>().isSetup = false;
+        GameObject vm1_object = VendingMachine1.GetComponent<Interactable>().vendingMachineObject;
+        VendingMachine Vm1 = vm1_object.GetComponent<VendingMachine>();
+        Vm1.isSetup = false;
+
+        GameObject vm2_object = VendingMachine2.GetComponent<Interactable>().vendingMachineObject;
+        VendingMachine Vm2 = vm2_object.GetComponent<VendingMachine>();
+        Vm2.isSetup = false;
     }
+
+    public void NewWave()
+    {
+        if (FirstWave == true)
+        {
+            FirstWave = false;
+            SpawnVendingMachines();
+            SpawnWeaponBoards();
+            SpawnedObjects = true;
+        }
+        else
+        {
+            if (SpawnedObjects == true)
+            {
+                SpawnedObjects = false;
+            }
+            else
+            {
+                SpawnVendingMachines();
+                SpawnedObjects = true;
+            }
+        }
+    }
+
 }
