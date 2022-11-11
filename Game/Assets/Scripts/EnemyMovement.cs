@@ -40,18 +40,31 @@ public class EnemyMovement : MonoBehaviour
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
         if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (Vector3.Distance(transform.position, player.position) < agent.stoppingDistance || attacking == true)
+
+        if (attacking)
         {
-            agent.SetDestination(transform.position);
+            agent.SetDestination(player.position);
+            animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 1f, Time.deltaTime * 5f));
         }
-        if (Vector3.Distance(transform.position, player.position) < attackRange)
+        else
+        {
+            animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 5f));
+        }
+
+        if (Vector3.Distance(transform.position, player.position) < agent.stoppingDistance)
+        {
+            animator.SetBool("Running", false);
+            animator.SetBool("Walking", false);
+        }
+
+        if (Vector3.Distance(transform.position, player.position) < attackRange && attacking == false)
         {
             transform.LookAt(player);
             attackEvent.Invoke();
         }
-        else
+        else if(Vector3.Distance(transform.position, player.position) > attackRange)
         {
-            if(canPatrol == false)
+            if (canPatrol == false)
             {
                 ChasePlayer();
             }
@@ -91,7 +104,6 @@ public class EnemyMovement : MonoBehaviour
         }
         this.enabled = false;
     }
-
     void AttackEnd()
     {
         attacking = false;

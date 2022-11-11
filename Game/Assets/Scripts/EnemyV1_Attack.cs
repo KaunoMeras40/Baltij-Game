@@ -16,6 +16,7 @@ public class EnemyV1_Attack : MonoBehaviour
     public float attackRange;
 
     [SerializeField] private GameObject HitEffect;
+    public GameObject Weapon;
 
     Transform player;
     NavMeshAgent agent;
@@ -34,6 +35,17 @@ public class EnemyV1_Attack : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, player.position) < attackRange)
             {
+                
+            }
+        }
+    }
+
+    public void Damage(Collider other)
+    {
+        if (attacking && !hasAttacked)
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
                 int damage = GetComponent<CharacterStats>().damage.GetValue();
                 player.GetComponent<CharacterStats>().TakeDamage(damage);
                 GetComponent<EnemyMovement>().Shake(2f, 0.3f, 20f);
@@ -45,8 +57,6 @@ public class EnemyV1_Attack : MonoBehaviour
 
     public void Attack()
     {
-        animator.SetBool("Running", false);
-        animator.SetBool("Walking", false);
         if (attackRateTimer > attackRate && !attacking)
         {
             GetComponent<EnemyMovement>().attacking = true;
@@ -74,5 +84,6 @@ public class EnemyV1_Attack : MonoBehaviour
     {
         attacking = false;
         hasAttacked = false;
+        GetComponent<EnemyMovement>().attacking = false;
     }
 }
