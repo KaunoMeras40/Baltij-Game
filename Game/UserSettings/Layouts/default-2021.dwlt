@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 64
+  controlID: 117
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 150
+  controlID: 118
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -246,8 +246,8 @@ MonoBehaviour:
     y: 0
     width: 499
     height: 947
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 11}
   m_Panes:
   - {fileID: 11}
@@ -329,9 +329,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 1446ffff
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: e24dffffa8d6ffff3cfaffff
+      m_ExpandedIDs: f62bfefffa2bfeff9292feff9492feff9692feffa831ffffaa31ffffac31ffff34b6ffffe2ecffffe6ecffffe8ecffff64f9ffff68f9ffff6af9ffff10fbffff7c690000f86b0000486f0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -592,9 +592,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.9304947, y: -5.008001, z: -9.31741}
+    m_Target: {x: -43.938797, y: -3.1061835, z: -17.185585}
     speed: 2
-    m_Value: {x: 1.9304947, y: -5.008001, z: -9.31741}
+    m_Value: {x: -43.938797, y: -3.1061835, z: -17.185585}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -641,20 +641,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.008119756, y: 0.9795842, z: -0.19684637, w: 0.040290855}
+    m_Target: {x: 0.033423048, y: -0.9175102, z: 0.078919865, w: 0.38843834}
     speed: 2
-    m_Value: {x: 0.0084149195, y: 0.9795114, z: -0.19683169, w: 0.041759703}
+    m_Value: {x: 0.032839507, y: -0.9176024, z: 0.077541366, w: 0.3884774}
   m_Size:
-    m_Target: 2.2775404
+    m_Target: 1.9001001
     speed: 2
-    m_Value: 10.45
+    m_Value: 1.9001001
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 0.12094
-    m_SpeedNormalized: 0.06
+    m_Speed: 0.60069996
+    m_SpeedNormalized: 0.29999998
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -836,22 +836,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Weapons/M249
+    - Assets/Map/Decor/Mats
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Weapons/M249
+  - Assets/Map/Decor/Mats
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\ginas\Desktop\Baltij-Game\Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 360}
-    m_SelectedIDs: ec920000
-    m_LastClickedID: 37612
-    m_ExpandedIDs: 00000000d4900000d6900000d8900000da900000dc900000de900000e0900000e2900000e4900000e6900000e890000000ca9a3b
+    scrollPos: {x: 0, y: 95}
+    m_SelectedIDs: dc880000
+    m_LastClickedID: 35036
+    m_ExpandedIDs: 000000008488000086880000888800008a8800008c8800008e8800009088000092880000948800009688000098880000f688000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -879,7 +879,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d4900000d6900000d8900000da900000dc900000de900000e0900000e2900000e4900000e6900000e8900000
+    m_ExpandedIDs: 000000008488000086880000888800008a8800008c8800008e8800009088000092880000948800009688000098880000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -906,7 +906,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000906500006aa300008c6500008a7e00009a2a000000000000267b0000967f000032cb000042cb00004ee600003cd90000b0f70000c67d0000c49d00007e830000ac8300003e850000b86b00005c7a000070360100623601005a390100ca3b0100323f0100b0ab0000f6ae00002ee500003ae50000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
