@@ -28,6 +28,7 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] AudioClip PumpAfterShot;
 
     [SerializeField] bool shotgun;
+    [SerializeField] bool cartrigesOn; 
 
     AudioSource audioSource;
 
@@ -93,11 +94,22 @@ public class WeaponManager : MonoBehaviour
             shootingPoint.LookAt(aimController.hitPos);
             audioSource.PlayOneShot(gunShot);
             aimController.animator.SetBool("Shoot", true);
-            aimController.Shake(0.7f, 0.2f, 10f);
+            if (itemTypeSlot.M249 == item)
+            {
+                aimController.Shake(0.9f, 0.4f, 12f);
+            }
+            else
+            {
+                aimController.Shake(0.7f, 0.2f, 10f);
+            }
             ammo.currentAmmo--;
             ParticleSystem.MainModule main = ShootingEffect.main;
             main.simulationSpeed = 2;
             ShootingEffect.Play();
+            if (cartrigesOn)
+            {
+                cartrigeParticle.Play();
+            }
             if (shotgun)
             {
                 audioSource.PlayOneShot(PumpAfterShot);
@@ -119,7 +131,6 @@ public class WeaponManager : MonoBehaviour
             }
             else
             {
-                cartrigeParticle.Play();
                 GameObject currentBullet = Instantiate(BulletPrefab, shootingPoint.position, Quaternion.identity);
                 currentBullet.GetComponent<Bullet>().damage = charStats.damage.GetValue();
                 Rigidbody rb = currentBullet.GetComponent<Rigidbody>();

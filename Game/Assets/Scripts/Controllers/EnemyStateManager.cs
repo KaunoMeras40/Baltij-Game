@@ -21,41 +21,74 @@ public class EnemyStateManager : MonoBehaviour
 
     public bool canPatrol;
 
+    public float attackRate;
+    public float attackRateTimer;
+
+     public bool attacking;
+
     void Start()
     {
         player = PlayerManager.Instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
 
-        currentState = patrolState;
+        currentState = chaseState;
         currentState.EnterState(this);
     }
 
     // Update is called once per frame
     void Update()
     {
+        attackRateTimer += Time.deltaTime;
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if (playerInSightRange && !playerInAttackRange)
+        if (canPatrol)
         {
-            if (canPatrol)
+            SwitchState(patrolState);
+        }
+        else
+        {
+            if (playerInSightRange && !playerInAttackRange)
             {
-                currentState = patrolState;
-                currentState.EnterState(this);
+                if (currentState != chaseState)
+                {
+                    SwitchState(chaseState);
+                }
             }
-            else
+            else if(playerInSightRange && playerInAttackRange)
             {
-                currentState = chaseState;
-                currentState.EnterState(this);
+                if (currentState != attackState)
+                {
+                    SwitchState(attackState);
+                }
             }
         }
+        currentState.UpdateState(this);
+
     }
 
     public void SwitchState(EnemyState state)
     {
         currentState = state;
         currentState.EnterState(this);
+    }
+
+    public void AttackEndDebug()
+    {
+        attacking = false;
+    }
+
+    void AttackStart()
+    {
+        attacking = true;
+        Debug.Log("START");
+    }
+
+    void AttackEnd()
+    {
+        attacking = false;
+        Debug.Log("END");
     }
 
 

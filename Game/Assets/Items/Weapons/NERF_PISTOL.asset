@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NERF_PISTOL
   m_EditorClassIdentifier: 
   itemName: Nerf Pistol
-  damageModifier: 0
+  damageModifier: 5
   item: 1
   weaponType: 1
   consumableType: 7
@@ -21,5 +21,5 @@ MonoBehaviour:
     type: 3}
   pistol: 1
   itemIcon: {fileID: 0}
-  itemPrice: 10
+  itemPrice: 79
   description: 

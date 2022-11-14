@@ -5,7 +5,6 @@ public class ChaseState : EnemyState
     public override void EnterState(EnemyStateManager stateManager)
     {
         Debug.Log("Chasing");
-        throw new System.NotImplementedException();
     }
 
     public override void UpdateState(EnemyStateManager stateManager)
@@ -16,6 +15,5 @@ public class ChaseState : EnemyState
             stateManager.animator.SetBool("Running", true);
             stateManager.animator.SetBool("Walking", false);
         }
-        throw new System.NotImplementedException();
     }
 }

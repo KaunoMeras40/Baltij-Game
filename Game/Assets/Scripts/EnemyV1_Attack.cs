@@ -8,7 +8,7 @@ public class EnemyV1_Attack : MonoBehaviour
 
     Animator animator;
     [SerializeField] float attackRate;
-    float attackRateTimer;
+    public float attackRateTimer;
 
     bool attacking;
     bool hasAttacked;

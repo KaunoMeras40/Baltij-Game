@@ -35,7 +35,7 @@ public class Item : ScriptableObject
     }
 }
 
-public enum itemTypeSlot { M4A1, NERF_PISTOL, MOSSBERG, M14, CONSUMABLE }
+public enum itemTypeSlot { M4A1, NERF_PISTOL, MOSSBERG, M14, M249, PMM, CONSUMABLE }
 
 public enum weaponType { Rifle, Pistol, Shotgun, NONE }
 public enum itemType { Pepsi, Redbull, Xanax, Zaza, Meth, THC, Benadryl, NONE }

@@ -8,7 +8,6 @@ public class PatrolState : EnemyState
     public override void EnterState(EnemyStateManager stateManager)
     {
         Debug.Log("Patroling");
-        throw new System.NotImplementedException();
     }
 
     public override void UpdateState(EnemyStateManager stateManager)
