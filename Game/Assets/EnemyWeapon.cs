@@ -7,9 +7,9 @@ public class EnemyWeapon : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (GetComponentInParent<EnemyV1_Attack>())
+        if (GetComponentInParent<EnemyStateManager>())
         {
-            GetComponentInParent<EnemyV1_Attack>().Damage(other);
+            GetComponentInParent<EnemyStateManager>().Damage(other);
         }
         
     }
