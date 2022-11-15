@@ -101,6 +101,8 @@ namespace StarterAssets
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
 
+        public bool moving;
+
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
         private PlayerInput _playerInput;
 #endif
@@ -129,10 +131,12 @@ namespace StarterAssets
             }
         }
 
+        public static ThirdPersonController instance;
 
         private void Awake()
         {
             // get a reference to our main camera
+            instance = this;
             if (_mainCamera == null)
             {
                 _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
@@ -261,6 +265,7 @@ namespace StarterAssets
             // if there is a move input rotate player when the player is moving
             if (_input.move != Vector2.zero)
             {
+                moving = true;
                 _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg +
                                   _mainCamera.transform.eulerAngles.y;
                 float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity,
@@ -276,6 +281,10 @@ namespace StarterAssets
                 {
                     transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
                 }
+            }
+            else
+            {
+                moving = false;
             }
 
 

@@ -1,22 +1,37 @@
 using UnityEngine;
-
+using StarterAssets;
 public class AttackState : EnemyState
 {
 
-    bool attac = false;
     public override void EnterState(EnemyStateManager stateManager)
     {
-        Debug.Log("Attacking");
+
     }
 
     public override void UpdateState(EnemyStateManager stateManager)
     {
         Debug.Log("ATTACK STATE");
-       if (attac == false)
+        stateManager.agent.SetDestination(stateManager.player.position);
+        stateManager.transform.LookAt(stateManager.player);
+        if (ThirdPersonController.instance.moving == true)
         {
-            attac = true;
-            Attack(stateManager);
-        }    
+            stateManager.animator.SetLayerWeight(1, Mathf.Lerp(stateManager.animator.GetLayerWeight(1), 1f, Time.deltaTime * 5f));
+            stateManager.animator.SetBool("Running", true);
+        }
+        else
+        {
+            if (stateManager.playerInAttackRange)
+            {
+                stateManager.animator.SetBool("Running", false);
+                stateManager.animator.SetBool("Walking", false);
+            }
+        }
+        if (stateManager.attacking)
+        {
+
+        }
+        
+        Attack(stateManager);
     }
 
     void Attack(EnemyStateManager stateManager)

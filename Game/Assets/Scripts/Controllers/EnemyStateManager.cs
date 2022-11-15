@@ -24,7 +24,7 @@ public class EnemyStateManager : MonoBehaviour
     public float attackRate;
     public float attackRateTimer;
 
-     public bool attacking;
+    public bool attacking;
 
     void Start()
     {
@@ -66,6 +66,20 @@ public class EnemyStateManager : MonoBehaviour
         }
         currentState.UpdateState(this);
 
+    }
+
+    public void Damage(Collider other)
+    {
+        if (attacking)
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                int damage = GetComponent<CharacterStats>().damage.GetValue();
+                player.GetComponent<CharacterStats>().TakeDamage(damage);
+                GetComponent<EnemyMovement>().Shake(2f, 0.3f, 20f);
+                //Instantiate(HitEffect, player.position + new Vector3(0, 1, 0), Quaternion.identity).GetComponent<AudioSource>().Play();
+            }
+        }
     }
 
     public void SwitchState(EnemyState state)
