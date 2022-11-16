@@ -22,13 +22,10 @@ public class AttackState : EnemyState
         {
             if (stateManager.playerInAttackRange)
             {
+                stateManager.animator.SetLayerWeight(1, Mathf.Lerp(stateManager.animator.GetLayerWeight(1), 1f, Time.deltaTime * 5f));
                 stateManager.animator.SetBool("Running", false);
                 stateManager.animator.SetBool("Walking", false);
             }
-        }
-        if (stateManager.attacking)
-        {
-
         }
         
         Attack(stateManager);
@@ -38,6 +35,7 @@ public class AttackState : EnemyState
     {
         if (stateManager.attackRateTimer > stateManager.attackRate && !stateManager.attacking)
         {
+            stateManager.hasAttacked = false;
             float random = Random.Range(0f, 2f);
             stateManager.animator.SetFloat("AttackType", random);
             stateManager.attackRateTimer = 0f;

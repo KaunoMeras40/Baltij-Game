@@ -26,6 +26,11 @@ public class EnemyStateManager : MonoBehaviour
 
     public bool attacking;
 
+    [SerializeField] private GameObject HitEffect;
+    [SerializeField] private GameObject ammoBox;
+
+    [HideInInspector] public bool hasAttacked;
+
     void Start()
     {
         player = PlayerManager.Instance.player.transform;
@@ -70,14 +75,15 @@ public class EnemyStateManager : MonoBehaviour
 
     public void Damage(Collider other)
     {
-        if (attacking)
+        if (attacking && hasAttacked == false)
         {
             if (other.gameObject.CompareTag("Player"))
             {
+                hasAttacked = true;
                 int damage = GetComponent<CharacterStats>().damage.GetValue();
                 player.GetComponent<CharacterStats>().TakeDamage(damage);
-                GetComponent<EnemyMovement>().Shake(2f, 0.3f, 20f);
-                //Instantiate(HitEffect, player.position + new Vector3(0, 1, 0), Quaternion.identity).GetComponent<AudioSource>().Play();
+                Shake(2f, 0.3f, 20f);
+                Instantiate(HitEffect, player.position + new Vector3(0, 1, 0), Quaternion.identity).GetComponent<AudioSource>().Play();
             }
         }
     }
@@ -105,5 +111,26 @@ public class EnemyStateManager : MonoBehaviour
         Debug.Log("END");
     }
 
+    public void OnDeath()
+    {
+        int ran = Random.Range(1, 100);
+        if (ran < 6f)
+        {
+            Instantiate(ammoBox, transform.position, Quaternion.identity);
+        }
+        this.enabled = false;
+    }
+
+    public void Shake(float intensity, float time, float fr)
+    {
+        GameObject[] ShakeObjects = GameObject.FindGameObjectsWithTag("Shake");
+        foreach (GameObject obj in ShakeObjects)
+        {
+            if (obj.GetComponent<CameraShake>() != null)
+            {
+                obj.GetComponent<CameraShake>().SetCameraShake(intensity, time, fr);
+            }
+        }
+    }
 
 }
