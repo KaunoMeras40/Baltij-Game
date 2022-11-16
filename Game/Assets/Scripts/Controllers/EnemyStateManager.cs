@@ -19,17 +19,27 @@ public class EnemyStateManager : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
 
+    public float jumpAttackRange;
+    public float regularAttackRange;
+
+    [HideInInspector] public bool jumping = false;
+    public AnimationCurve HeightCurve;
+
     public bool canPatrol;
 
     public float attackRate;
-    public float attackRateTimer;
+    [HideInInspector] public float attackRateTimer;
 
     public bool attacking;
 
+    [SerializeField] private Transform ExplosionParticles;
     [SerializeField] private GameObject HitEffect;
     [SerializeField] private GameObject ammoBox;
 
     [HideInInspector] public bool hasAttacked;
+    [HideInInspector] public bool soundplayed;
+
+    public enemyType type;
 
     void Start()
     {
@@ -69,6 +79,11 @@ public class EnemyStateManager : MonoBehaviour
                 }
             }
         }
+        if (type == enemyType.Mutant)
+        {
+            
+        }
+
         currentState.UpdateState(this);
 
     }
@@ -87,6 +102,48 @@ public class EnemyStateManager : MonoBehaviour
             }
         }
     }
+    public void Explode()
+    {
+        if (Vector3.Distance(player.position, transform.position) < agent.stoppingDistance && !hasAttacked)
+        {
+            hasAttacked = true;
+            int damage = GetComponent<CharacterStats>().damage.GetValue();
+            player.GetComponent<CharacterStats>().TakeDamage(damage);
+            Shake(2f, 0.3f, 20f);
+            Instantiate(ExplosionParticles, transform.position, Quaternion.identity);
+            GetComponent<CharacterStats>().TakeDamage(1000);
+        }
+    }
+
+    public void JumpAttackStart()
+    {
+        attackState.BasicAttack(this, true);
+    }
+
+    void JumpStart()
+    {
+        StartCoroutine(JumpAttack());
+    }
+
+    private IEnumerator JumpAttack()
+    {
+        agent.isStopped = true;
+        jumping = true;
+        Vector3 startingPosition = transform.position;
+
+        for (float time = 0; time < 1; time += Time.deltaTime * 1.35f)
+        {
+            transform.position = Vector3.Lerp(startingPosition, PlayerAimController.instance.jumpOffset.position, time) + Vector3.up * HeightCurve.Evaluate(time);
+            transform.LookAt(player);
+            yield return null;
+            if (Vector3.Distance(transform.position, player.position) < 1.2f)
+            {
+                jumping = false;
+                break;
+            }
+        }
+        agent.isStopped = false;
+    }
 
     public void SwitchState(EnemyState state)
     {
@@ -102,13 +159,11 @@ public class EnemyStateManager : MonoBehaviour
     void AttackStart()
     {
         attacking = true;
-        Debug.Log("START");
     }
 
     void AttackEnd()
     {
         attacking = false;
-        Debug.Log("END");
     }
 
     public void OnDeath()
@@ -134,3 +189,5 @@ public class EnemyStateManager : MonoBehaviour
     }
 
 }
+
+public enum enemyType { Basic, Bomber, Mutant, Shooter, Kid }
