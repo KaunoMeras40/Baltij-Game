@@ -122,7 +122,7 @@ public class CharacterStats : MonoBehaviour
             gameObject.tag = "Untagged";
             agent.enabled = false;
             animator.enabled = false;
-            GetComponent<EnemyMovement>().OnDeath();
+            GetComponent<EnemyStateManager>().OnDeath();
             GetComponent<CapsuleCollider>().enabled = false;
             Instantiate(DeathEffect, transform.position, Quaternion.identity, transform);
             Destroy(gameObject, 10f);
