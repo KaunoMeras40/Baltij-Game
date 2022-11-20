@@ -22,7 +22,7 @@ public class EnemyStateManager : MonoBehaviour
     public float jumpAttackRange;
     public float regularAttackRange;
 
-    [HideInInspector] public bool jumping = false;
+     public bool jumping = false;
     public AnimationCurve HeightCurve;
 
     public bool canPatrol;

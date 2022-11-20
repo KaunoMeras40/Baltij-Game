@@ -36,9 +36,10 @@ public class AttackState : EnemyState
         {
             if (Vector3.Distance(stateManager.player.position, stateManager.transform.position) > stateManager.agent.stoppingDistance + 1.5f)
             {
+                Debug.Log("BIGGER");
                 if (Vector3.Distance(stateManager.player.position, stateManager.transform.position) < stateManager.attackRange)
                 {
-                    stateManager.JumpAttackStart();
+                    BasicAttack(stateManager, true);
                     Debug.Log("JUMP");
                 }
             }
@@ -78,6 +79,7 @@ public class AttackState : EnemyState
             if (jump)
             {
                 random = 2f;
+                Debug.Log("2");
             }
             stateManager.animator.SetFloat("AttackType", random);
             stateManager.attackRateTimer = 0f;
