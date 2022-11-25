@@ -15,10 +15,10 @@ MonoBehaviour:
   active: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 0.35
+    m_Value: 0.13
   intensity:
     m_OverrideState: 1
-    m_Value: 0.33
+    m_Value: 0.64
   scatter:
     m_OverrideState: 1
     m_Value: 0.219
@@ -57,7 +57,7 @@ MonoBehaviour:
   master:
     m_OverrideState: 1
     m_Value:
-      <length>k__BackingField: 2
+      <length>k__BackingField: 3
       m_Loop: 0
       m_ZeroValue: 0
       m_Range: 1
@@ -65,8 +65,8 @@ MonoBehaviour:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: 0
-          value: 0
+          time: 0.011415525
+          value: 0.0095694065
           inSlope: 1
           outSlope: 1
           tangentMode: 0
@@ -74,10 +74,19 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.91552514
+          time: 0.5045662
+          value: 0.49760765
+          inSlope: 1.8711553
+          outSlope: 1.8711553
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
           value: 1
-          inSlope: 1
-          outSlope: 1
+          inSlope: 0.52392393
+          outSlope: 0.52392393
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
@@ -167,10 +176,10 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.9292237
-          value: 0.4736842
-          inSlope: 0.7684219
-          outSlope: 0.7684219
+          time: 0.86986303
+          value: 0.70813394
+          inSlope: 1.1642739
+          outSlope: 1.1642739
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
@@ -245,10 +254,10 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: -0.05
+    m_Value: -0.23
   contrast:
     m_OverrideState: 1
-    m_Value: 5.9
+    m_Value: 11.43
   colorFilter:
     m_OverrideState: 1
     m_Value: {r: 0.9811321, g: 0.9583674, b: 0.92096835, a: 1}
