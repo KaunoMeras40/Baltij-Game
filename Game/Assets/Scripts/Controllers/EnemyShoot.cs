@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyV4_Shoot : MonoBehaviour
+public class EnemyShoot : MonoBehaviour
 {
 
     Animator animator;
-    [SerializeField] float attackRate;
-    float attackRateTimer;
 
     bool attacking;
     bool hasAttacked;
 
-    public float attackRange;
+    private float attackRange;
 
     [SerializeField] private GameObject HitEffect;
 
@@ -35,6 +33,7 @@ public class EnemyV4_Shoot : MonoBehaviour
 
     bool canSeePlayer;
 
+    EnemyStateManager stateManager;
 
     private void Start()
     {
@@ -42,11 +41,12 @@ public class EnemyV4_Shoot : MonoBehaviour
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         charStats = GetComponent<CharacterStats>();
+        stateManager = GetComponent<EnemyStateManager>();
     }
 
     private void Update()
     {
-        attackRateTimer += Time.deltaTime;
+        attackRange = stateManager.attackRange;
         Ray ray = new Ray(shootingPoint.position, shootingPoint.forward);
         if (Physics.Raycast(ray, out RaycastHit raycasthit, 999f, colliderMask))
         {
@@ -65,10 +65,9 @@ public class EnemyV4_Shoot : MonoBehaviour
     public void Shoot()
     {
         if (canSeePlayer == false) return;
-        animator.SetBool("Running", false);
-        animator.SetBool("Walking", false);
-        if (attackRateTimer > attackRate && !attacking)
+        if (stateManager.attackRateTimer > stateManager.attackRate && !attacking)
         {
+            Debug.Log("SHOOT");
             float random = Random.Range(0.0f, 1.0f);
 
             bool isHit = random > 1.0f - HitAccuracy;
@@ -90,8 +89,8 @@ public class EnemyV4_Shoot : MonoBehaviour
                 rb.AddForce(newPoint * 300f, ForceMode.Impulse);
             }
 
-            GetComponent<EnemyMovement>().attacking = true;
-            attackRateTimer = 0f;
+            //attacking = true;
+            stateManager.attackRateTimer = 0f;
             animator.SetTrigger("Attack");
         }
     }

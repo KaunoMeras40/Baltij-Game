@@ -19,16 +19,13 @@ public class EnemyStateManager : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
 
-    public float jumpAttackRange;
-    public float regularAttackRange;
-
-     public bool jumping = false;
-    public AnimationCurve HeightCurve;
-
     public bool canPatrol;
 
     public float attackRate;
-    [HideInInspector] public float attackRateTimer;
+    public float attackRateTimer;
+
+    private float RangeChangeRate = 1f;
+    private float RangeChangeTimer;
 
     public bool attacking;
 
@@ -55,6 +52,7 @@ public class EnemyStateManager : MonoBehaviour
     void Update()
     {
         attackRateTimer += Time.deltaTime;
+        RangeChangeTimer += Time.deltaTime;
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
@@ -79,13 +77,20 @@ public class EnemyStateManager : MonoBehaviour
                 }
             }
         }
-        if (type == enemyType.Mutant)
+
+        if (RangeChangeTimer > RangeChangeRate && type == enemyType.Shooter)
         {
-            
+            attackRange = Random.Range(8.5f, 11.5f);
+            RangeChangeTimer = 0f;
+            agent.stoppingDistance = attackRange;
         }
 
         currentState.UpdateState(this);
+    }
 
+    public void Shoot()
+    {
+        GetComponent<EnemyShoot>().Shoot();
     }
 
     public void Damage(Collider other)
@@ -113,36 +118,6 @@ public class EnemyStateManager : MonoBehaviour
             Instantiate(ExplosionParticles, transform.position, Quaternion.identity);
             GetComponent<CharacterStats>().TakeDamage(1000);
         }
-    }
-
-    public void JumpAttackStart()
-    {
-        attackState.BasicAttack(this, true);
-    }
-
-    void JumpStart()
-    {
-        StartCoroutine(JumpAttack());
-    }
-
-    private IEnumerator JumpAttack()
-    {
-        agent.isStopped = true;
-        jumping = true;
-        Vector3 startingPosition = transform.position;
-
-        for (float time = 0; time < 1; time += Time.deltaTime * 1.35f)
-        {
-            transform.position = Vector3.Lerp(startingPosition, PlayerAimController.instance.jumpOffset.position, time) + Vector3.up * HeightCurve.Evaluate(time);
-            transform.LookAt(player);
-            yield return null;
-            if (Vector3.Distance(transform.position, player.position) < 1.2f)
-            {
-                jumping = false;
-                break;
-            }
-        }
-        agent.isStopped = false;
     }
 
     public void SwitchState(EnemyState state)

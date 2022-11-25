@@ -27,13 +27,5 @@ public class ChaseState : EnemyState
             }
             stateManager.Explode();
         }
-        //else if (stateManager.type == enemyType.Mutant)
-        //{
-        //    if (Vector3.Distance(stateManager.player.position, stateManager.transform.position) < stateManager.agent.stoppingDistance + 3.5f && !stateManager.jumping)
-        //    {
-        //        Debug.Log("JUMP ATTACK");
-        //        stateManager.JumpAttackStart();
-        //    }
-        //}
     }
 }
