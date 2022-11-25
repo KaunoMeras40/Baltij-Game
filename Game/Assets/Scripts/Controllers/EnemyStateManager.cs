@@ -165,4 +165,4 @@ public class EnemyStateManager : MonoBehaviour
 
 }
 
-public enum enemyType { Basic, Bomber, Mutant, Shooter, Kid }
+public enum enemyType { Basic, Bomber, Bandit, Shooter, Kid }

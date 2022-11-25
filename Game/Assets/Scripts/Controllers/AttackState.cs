@@ -30,7 +30,7 @@ public class AttackState : EnemyState
         
 
        
-        if (stateManager.type == enemyType.Basic)
+        if (stateManager.type == enemyType.Basic || stateManager.type == enemyType.Bandit)
         {
             BasicAttack(stateManager);
         }
@@ -56,7 +56,11 @@ public class AttackState : EnemyState
         if (stateManager.attackRateTimer > stateManager.attackRate && !stateManager.attacking)
         {
             stateManager.hasAttacked = false;
-            float random = Random.Range(0f, 2f);
+            float random = Random.Range(0, 3);
+            if (stateManager.type == enemyType.Bandit)
+            {
+                random = Random.Range(0, 5);
+            }
             stateManager.animator.SetFloat("AttackType", random);
             stateManager.attackRateTimer = 0f;
             stateManager.animator.SetTrigger("Attack");
