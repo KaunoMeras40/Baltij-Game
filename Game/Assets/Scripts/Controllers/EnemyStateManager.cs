@@ -38,11 +38,14 @@ public class EnemyStateManager : MonoBehaviour
 
     public enemyType type;
 
+    CharacterStats charStats;
+    bool boosPowerUp;
     void Start()
     {
         player = PlayerManager.Instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        charStats = GetComponent<CharacterStats>();
 
         currentState = chaseState;
         currentState.EnterState(this);
@@ -83,6 +86,20 @@ public class EnemyStateManager : MonoBehaviour
             attackRange = Random.Range(8.5f, 11.5f);
             RangeChangeTimer = 0f;
             agent.stoppingDistance = attackRange;
+        }
+
+        if (type == enemyType.Boss1)
+        {
+            if(charStats.health <= charStats.maxHealth.GetValue()/2 && boosPowerUp == false)
+            {
+                animator.SetBool("Power", true);
+                animator.SetTrigger("PowerUp");
+                boosPowerUp = true;
+                charStats.invincible = true;
+                agent.isStopped = true;
+                animator.SetFloat("AttackSpeed", 1.3f);
+                attackRate = 2.5f;
+            }
         }
 
         currentState.UpdateState(this);
@@ -131,6 +148,13 @@ public class EnemyStateManager : MonoBehaviour
         attacking = false;
     }
 
+    void PoweredUp()
+    {
+        charStats.invincible = false;
+        agent.isStopped = false;
+        attacking = false;
+    }
+
     void AttackStart()
     {
         attacking = true;
@@ -165,4 +189,4 @@ public class EnemyStateManager : MonoBehaviour
 
 }
 
-public enum enemyType { Basic, Bomber, Bandit, Shooter, Kid }
+public enum enemyType { Basic, Bomber, Bandit, Shooter, Kid, Boss1 }

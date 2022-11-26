@@ -26,6 +26,8 @@ public class CharacterStats : MonoBehaviour
     public bool gotHit;
     public bool dead { get; private set; }
 
+    public bool invincible;
+
     public AudioSource HitSoundSource;
 
     NavMeshAgent agent;
@@ -68,11 +70,12 @@ public class CharacterStats : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
+        if (invincible == true) return;
         float defence = (float)damage / 100f * (float)armor.GetValue();
         damage -= Mathf.RoundToInt(defence);
         health -= damage;
         animator.SetTrigger("Hit");
-        float random = Random.Range(0f, 2f);
+        float random = Random.Range(0, 3);
         animator.SetFloat("HitType", random);
         //Debug.Log(transform.name + " takes " + damage + " damage.");
         gotHit = true;
@@ -84,7 +87,8 @@ public class CharacterStats : MonoBehaviour
         }
         else
         {
-            agent.isStopped = true;
+            animator.SetLayerWeight(2, 1f);
+            //agent.isStopped = true;
         }
         if (health <= 0)
         {
@@ -94,7 +98,7 @@ public class CharacterStats : MonoBehaviour
 
     void HitEnd()
     {
-        agent.isStopped = false;
+        animator.SetLayerWeight(2, 0f);
     }
     public void Shake(float intensity, float time, float fr)
     {

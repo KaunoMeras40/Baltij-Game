@@ -20,9 +20,13 @@ public class AttackState : EnemyState
             StopWalking(stateManager);
             if (ThirdPersonController.instance.moving == true)
             {
-                if (stateManager.type != enemyType.Shooter)
+                if (stateManager.type != enemyType.Shooter && stateManager.type != enemyType.Boss1)
                 {
                     stateManager.animator.SetLayerWeight(1, Mathf.Lerp(stateManager.animator.GetLayerWeight(1), 1f, Time.deltaTime * 5f));
+                    stateManager.animator.SetBool("Running", true);
+                }
+                else if (stateManager.type == enemyType.Boss1)
+                {
                     stateManager.animator.SetBool("Running", true);
                 }
             }
@@ -30,7 +34,7 @@ public class AttackState : EnemyState
         
 
        
-        if (stateManager.type == enemyType.Basic || stateManager.type == enemyType.Bandit)
+        if (stateManager.type == enemyType.Basic || stateManager.type == enemyType.Bandit || stateManager.type == enemyType.Boss1)
         {
             BasicAttack(stateManager);
         }
@@ -46,7 +50,10 @@ public class AttackState : EnemyState
 
     void StopWalking(EnemyStateManager stateManager)
     {
-        stateManager.animator.SetLayerWeight(1, Mathf.Lerp(stateManager.animator.GetLayerWeight(1), 1f, Time.deltaTime * 5f));
+        if (stateManager.type != enemyType.Boss1)
+        {
+            stateManager.animator.SetLayerWeight(1, Mathf.Lerp(stateManager.animator.GetLayerWeight(1), 1f, Time.deltaTime * 5f));
+        }
         stateManager.animator.SetBool("Running", false);
         stateManager.animator.SetBool("Walking", false);
     }
@@ -57,7 +64,7 @@ public class AttackState : EnemyState
         {
             stateManager.hasAttacked = false;
             float random = Random.Range(0, 3);
-            if (stateManager.type == enemyType.Bandit)
+            if (stateManager.type == enemyType.Bandit || stateManager.type == enemyType.Boss1)
             {
                 random = Random.Range(0, 5);
             }
