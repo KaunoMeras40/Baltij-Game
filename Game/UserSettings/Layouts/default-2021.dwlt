@@ -172,11 +172,7 @@ MonoBehaviour:
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
   controlID: 74
-=======
-  controlID: 19
->>>>>>> Stashed changes
 =======
   controlID: 19
 >>>>>>> Stashed changes
@@ -203,9 +199,6 @@ MonoBehaviour:
 =======
     width: 1068
     height: 516
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
@@ -233,15 +226,9 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     y: 666
     width: 1067
     height: 265
-=======
-    y: 516
-    width: 1068
-    height: 391
->>>>>>> Stashed changes
 =======
     y: 516
     width: 1068
@@ -306,15 +293,9 @@ MonoBehaviour:
     serializedVersion: 2
     x: 349
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     y: 747
     width: 1065
     height: 244
-=======
-    y: 597
-    width: 1066
-    height: 370
->>>>>>> Stashed changes
 =======
     y: 597
     width: 1066
@@ -338,11 +319,7 @@ MonoBehaviour:
     m_SearchArea: 1
     m_Folders:
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     - Assets/Weapons/EnemyWeapons/Scimitar
-=======
-    - Assets/Map/Decor/Mats
->>>>>>> Stashed changes
 =======
     - Assets/Map/Decor/Mats
 >>>>>>> Stashed changes
@@ -352,11 +329,7 @@ MonoBehaviour:
   m_StartGridSize: 64
   m_LastFolders:
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
   - Assets/Weapons/EnemyWeapons/Scimitar
-=======
-  - Assets/Map/Decor/Mats
->>>>>>> Stashed changes
 =======
   - Assets/Map/Decor/Mats
 >>>>>>> Stashed changes
@@ -366,21 +339,15 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     scrollPos: {x: 0, y: 416}
     m_SelectedIDs: 88b10000
     m_LastClickedID: 45448
     m_ExpandedIDs: 000000001e93000020930000229300002493000026930000289300002a9300002c9300002e930000309300003293000000ca9a3b
 =======
-=======
->>>>>>> Stashed changes
     scrollPos: {x: 0, y: 81}
     m_SelectedIDs: b88f0000
     m_LastClickedID: 36792
     m_ExpandedIDs: 00000000728f0000748f0000768f0000788f00007a8f00007c8f00007e8f0000808f0000828f0000848f0000868f000000ca9a3b
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -410,11 +377,7 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     m_ExpandedIDs: 000000001e93000020930000229300002493000026930000289300002a9300002c9300002e9300003093000032930000
-=======
-    m_ExpandedIDs: 00000000728f0000748f0000768f0000788f00007a8f00007c8f00007e8f0000808f0000828f0000848f0000868f0000
->>>>>>> Stashed changes
 =======
     m_ExpandedIDs: 00000000728f0000748f0000768f0000788f00007a8f00007c8f00007e8f0000808f0000828f0000848f0000868f0000
 >>>>>>> Stashed changes
@@ -506,15 +469,9 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 32}
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       m_SelectedIDs: ae7a0000
       m_LastClickedID: 31406
       m_ExpandedIDs: cefefeff14ebffff10fbffff006b0000406c00000c6d0000386d0000846e000052700000
-=======
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 9a44fdff1a00feff5207feff10fbffffa86b0000a26d0000d26d0000366f0000
->>>>>>> Stashed changes
 =======
       m_SelectedIDs: 
       m_LastClickedID: 0
@@ -572,9 +529,6 @@ MonoBehaviour:
 =======
     width: 1066
     height: 495
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -789,15 +743,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_Position:
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     m_Target: {x: -21.082163, y: -3.6313984, z: -7.3085027}
     speed: 2
     m_Value: {x: -21.082163, y: -3.6313984, z: -7.3085027}
-=======
-    m_Target: {x: -37.48649, y: -20.923197, z: -47.09192}
-    speed: 2
-    m_Value: {x: -37.48649, y: -20.923197, z: -47.09192}
->>>>>>> Stashed changes
 =======
     m_Target: {x: -37.48649, y: -20.923197, z: -47.09192}
     speed: 2
@@ -837,11 +785,7 @@ MonoBehaviour:
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       m_Size: {x: 0.03, y: 0.03}
-=======
-      m_Size: {x: 0.10001, y: 0.10001}
->>>>>>> Stashed changes
 =======
       m_Size: {x: 0.10001, y: 0.10001}
 >>>>>>> Stashed changes
@@ -857,7 +801,6 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     m_Target: {x: 0.03081299, y: 0.929818, z: -0.07964917, w: 0.35821667}
     speed: 2
@@ -875,28 +818,14 @@ MonoBehaviour:
     speed: 2
     m_Value: 10
 >>>>>>> Stashed changes
-=======
-    m_Target: {x: -0.18738231, y: -0.7943543, z: 0.49251387, w: -0.3022683}
-    speed: 2
-    m_Value: {x: -0.18692434, y: -0.79507357, z: 0.49131024, w: -0.3025419}
-  m_Size:
-    m_Target: 10
-    speed: 2
-    m_Value: 10
->>>>>>> Stashed changes
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     m_Speed: 0.42078996
     m_SpeedNormalized: 0.20999998
-=======
-    m_Speed: 0.08096088
-    m_SpeedNormalized: 0.04000044
->>>>>>> Stashed changes
 =======
     m_Speed: 0.08096088
     m_SpeedNormalized: 0.04000044

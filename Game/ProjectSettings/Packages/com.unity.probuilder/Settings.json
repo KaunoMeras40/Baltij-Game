@@ -207,11 +207,7 @@
                 "type": "UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "ShapeBuilder.LastPivotPosition",
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
                 "value": "{\"m_Value\":{\"x\":9.5367431640625e-7,\"y\":-4.331468517193571e-11,\"z\":5.684341886080802e-14}}"
-=======
-                "value": "{\"m_Value\":{\"x\":0.0,\"y\":0.0,\"z\":0.0}}"
->>>>>>> Stashed changes
 =======
                 "value": "{\"m_Value\":{\"x\":0.0,\"y\":0.0,\"z\":0.0}}"
 >>>>>>> Stashed changes
@@ -220,11 +216,7 @@
                 "type": "UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "ShapeBuilder.LastSize",
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
                 "value": "{\"m_Value\":{\"x\":0.07018756866455078,\"y\":-7.373920917510986,\"z\":-12.2362060546875}}"
-=======
-                "value": "{\"m_Value\":{\"x\":-0.5150251388549805,\"y\":-1.3152694702148438,\"z\":-0.4955902099609375}}"
->>>>>>> Stashed changes
 =======
                 "value": "{\"m_Value\":{\"x\":-0.5150251388549805,\"y\":-1.3152694702148438,\"z\":-0.4955902099609375}}"
 >>>>>>> Stashed changes
