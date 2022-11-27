@@ -31,6 +31,7 @@ public class CharacterStats : MonoBehaviour
     public AudioSource HitSoundSource;
 
     NavMeshAgent agent;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -87,8 +88,10 @@ public class CharacterStats : MonoBehaviour
         }
         else
         {
-            animator.SetLayerWeight(2, 1f);
-            //agent.isStopped = true;
+            if (GetComponent<EnemyStateManager>().type == enemyType.Boss1)
+            {
+                animator.SetLayerWeight(2, 1f);
+            }
         }
         if (health <= 0)
         {
@@ -98,6 +101,7 @@ public class CharacterStats : MonoBehaviour
 
     void HitEnd()
     {
+        gotHit = false;
         animator.SetLayerWeight(2, 0f);
     }
     public void Shake(float intensity, float time, float fr)
