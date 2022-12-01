@@ -100,7 +100,12 @@ public class PlayerAimController : MonoBehaviour
             BodyAim.weight = Mathf.Lerp(BodyAim.weight, 0.5f, 10f * Time.deltaTime);
             HeadAim.weight = Mathf.Lerp(HeadAim.weight, 1f, 10f * Time.deltaTime);
             RHandAim.weight = Mathf.Lerp(RHandAim.weight, 1f, 10f * Time.deltaTime);
-            if(!reloading)
+            if (Vector3.Distance(transform.position, aimPos.position) < 2f)
+            {
+                Debug.Log("SMALLER");
+                RHandAim.weight = Mathf.Lerp(RHandAim.weight, 0f, 10f * Time.deltaTime);
+            }
+            if (!reloading)
             {
                 LHandIK.weight = Mathf.Lerp(LHandIK.weight, 0f, 10f * Time.deltaTime);
                 LHandIKAimed.weight = Mathf.Lerp(LHandIKAimed.weight, 1f, 10f * Time.deltaTime);
