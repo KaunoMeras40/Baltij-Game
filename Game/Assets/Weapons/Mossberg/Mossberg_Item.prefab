@@ -415,6 +415,7 @@ MonoBehaviour:
   hasOpened: 0
   vendingMachineObject: {fileID: 0}
   interactable: 0
+  pickupSound: Shotgun_Pickup
 --- !u!54 &7856651954225824157
 Rigidbody:
   m_ObjectHideFlags: 0

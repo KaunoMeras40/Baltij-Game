@@ -10362,6 +10362,7 @@ MonoBehaviour:
   hasOpened: 0
   vendingMachineObject: {fileID: 0}
   interactable: 0
+  pickupSound: Rifle_Pickup
 --- !u!54 &7184068788771732174
 Rigidbody:
   m_ObjectHideFlags: 0

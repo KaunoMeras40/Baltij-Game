@@ -62,7 +62,7 @@ public class AudioManager : MonoBehaviour
         Sounds s = Array.Find(sounds, sound => sound.name == name);
         AudioSource src = gameObject.AddComponent<AudioSource>();
         src.playOnAwake = false;
-        src.spatialBlend = 1f;
+        src.spatialBlend = 0f;
         src.maxDistance = 40;
         src.clip = s.clip;
         src.volume = s.Volume;
