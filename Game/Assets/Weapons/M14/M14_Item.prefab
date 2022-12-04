@@ -5732,7 +5732,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5658226066433564509}
-  m_LocalRotation: {x: -8.804458e-10, y: 0.7071068, z: 0.7071068, w: 0.00000002969545}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
   m_LocalPosition: {x: 0.798, y: -4.265, z: -6.636}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5773,6 +5773,7 @@ MonoBehaviour:
   hasOpened: 0
   vendingMachineObject: {fileID: 0}
   interactable: 0
+  pickupSound: Rifle_Pickup
 --- !u!54 &4903529906456141256
 Rigidbody:
   m_ObjectHideFlags: 0

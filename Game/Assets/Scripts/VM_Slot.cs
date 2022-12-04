@@ -33,7 +33,8 @@ public class VM_Slot : MonoBehaviour
 				plrManager.VendingMachine_Purchase(item, Weapon, item.itemPrice);
 				GetComponent<TextMeshProUGUI>().enabled = false;
 				GetComponentInChildren<Button>().gameObject.SetActive(false);
-            }
+				FindObjectOfType<AudioManager>().PlaySound("VM_Purchase");
+			}
 		}
 	}
 }
