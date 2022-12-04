@@ -21,6 +21,8 @@ public class Interactable : MonoBehaviour
 
 	public interactableType interactable;
 
+	public string pickupSound;
+
 	private void Start()
 	{
 		player = PlayerManager.Instance.player.transform;
@@ -64,6 +66,7 @@ public class Interactable : MonoBehaviour
 		{
 			hasInteracted = true;
 			item.Equip();
+			FindObjectOfType<AudioManager>().PlaySound(pickupSound);
 			Destroy(gameObject);
 		}
 	}
